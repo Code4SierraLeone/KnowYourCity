@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<!--[if IE 9]>         <html class="ie9 no-focus" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-focus" lang="en"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+
+        <title>Know Your City</title>
+
+        <meta name="description" content="KnowYourCity">
+        <meta name="Info" content="code4Africa">
+        <meta name="robots" content="noindex, nofollow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, center-scalable=no">
+
+        <!-- Icons -->
+        <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
+        <link rel="shortcut icon" href="../../assets/img/favicons/favicon.png">
+
+        <link rel="icon" type="image/png" href="../../assets/img/favicons/favicon-16x16.png" sizes="16x16">
+        <link rel="icon" type="image/png" href="../../assets/img/favicons/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="../../assets/img/favicons/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="../../assets/img/favicons/favicon-160x160.png" sizes="160x160">
+        <link rel="icon" type="image/png" href="../../assets/img/favicons/favicon-192x192.png" sizes="192x192">
+
+        <link rel="apple-touch-icon" sizes="57x57" href="../../assets/img/favicons/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="../../assets/img/favicons/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="../../assets/img/favicons/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="../../assets/img/favicons/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="../../assets/img/favicons/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="../../assets/img/favicons/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="../../assets/img/favicons/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="../../assets/img/favicons/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="../../assets/img/favicons/apple-touch-icon-180x180.png">
+        <!-- END Icons -->
+
+        <!-- Stylesheets -->
+        <!-- Web fonts -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?Medical=Source+Sans+Pro:300,400,400italic,600,700%7COpen+Sans:300,400,400italic,600,700">
+
+        <!-- Page JS Plugins CSS go here -->
+
+        <!-- Bootstrap and KnowYourCity CSS frameShelter -->
+        <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
+        <link rel="stylesheet" id="css-main" href="../../assets/css/kyc.min.css">
+
+        <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
+        <link rel="stylesheet" id="css-theme" href="../../assets/css/themes/city.min.css">
+        <!-- END Stylesheets -->
+    </head>
+    <body>
+        <div id="page-loader"></div>
+        <!-- Page Container -->
+        <!--
+            Available Classes:
+
+            'enable-cookies'             Remembers active color theme between pages (when set through color theme list)
+
+            'sidebar-l'                  Left Sidebar and right Side Overlay
+            'sidebar-r'                  Right Sidebar and left Side Overlay
+            'sidebar-mini'               Mini hoverable Sidebar (> 991px)
+            'sidebar-o'                  Visible Sidebar by default (> 991px)
+            'sidebar-o-xs'               Visible Sidebar by default (< 992px)
+
+            'side-overlay-hover'         Hoverable Side Overlay (> 991px)
+            'side-overlay-o'             Visible Side Overlay by default (> 991px)
+
+            'side-scroll'                Enables custom scrolling on Sidebar and Side Overlay instead of native scrolling (> 991px)
+
+            'header-navbar-fixed'        Enables fixed header
+        -->
+        <div id="page-container" class="sidebar-l sidebar-o side-scroll header-navbar-fixed">
+            <!-- Side Overlay-->
+            <aside id="side-overlay">
+                <!-- Side Overlay Scroll Container -->
+                <div id="side-overlay-scroll">
+                    <!-- Side Header -->
+                    <div class="side-header side-content">
+                        <!-- Layout API, functionality initialized in App() -> uiLayoutApi() -->
+                        <button class="btn btn-default pull-right" type="button" data-toggle="layout" data-action="side_overlay_close">
+                            <i class="fa fa-times"></i>
+                        </button>
+                        <span class="font-w600 push-10-l">Admin</span>
+                    </div>
+                    <!-- END Side Header -->
+
+                    <!-- Side Content -->
+                    <div class="side-content remove-padding-t">
+                        <!-- Block -->
+                        <div class="block pull-r-l">
+                            <div class="block-header bg-gray-lighter">
+                                <ul class="block-options">
+                                    <li>
+                                        <button type="button" data-toggle="block-option" data-action="refresh_toggle" data-action-mode="demo"><i class="si si-refresh"></i></button>
+                                    </li>
+                                    <li>
+                                        <button type="button" data-toggle="block-option" data-action="content_toggle"></button>
+                                    </li>
+                                </ul>
+                                <h3 class="block-title">Block</h3>
+                            </div>
+                            <div class="block-content">
+                                <p>...</p>
+                            </div>
+                        </div>
+                        <!-- END Block -->
+                    </div>
+                    <!-- END Side Content -->
+                </div>
+                <!-- END Side Overlay Scroll Container -->
+            </aside>
+            <!-- END Side Overlay -->
+
+            <!-- Sidebar -->
+            <nav id="sidebar">
+                <!-- Sidebar Scroll Container -->
+                <div id="sidebar-scroll">
+                    <!-- Sidebar Content -->
+                    <!-- Adding .sidebar-mini-hide to an element will hide it when the sidebar is in mini mode -->
+                    <div class="sidebar-content">
+                        <!-- Side Header -->
+                        <div class="side-header side-content bg-white-op">
+                            <!-- Layout API, functionality initialized in App() -> uiLayoutApi() -->
+                            <button class="btn btn-link text-gray pull-right hidden-md hidden-lg" type="button" data-toggle="layout" data-action="sidebar_close">
+                                <i class="fa fa-times"></i>
+                            </button>
+                            <!-- Themes functionality initialized in App() -> uiHandleTheme() -->
+                            <a class="h5 text-white" href="index.html">
+                                <span>Kn</span><i class="fa fa-circle-o-notch text-primary"></i><span class="h5 font-w600 sidebar-mini-hide">w Your City</span>
+                            </a>
+                            <span>Beta</span>
+                        </div>
+                        <!-- END Side Header -->
+
+                        <!-- Side Content -->
+                        <div class="side-content">
+                            <ul class="nav-main">
+                                <li>
+                                    <a class="submenu" href="index.html"><i class="si si-map"></i><span class="sidebar-mini-hide">Home</span></a>
+                                </li>
+                                <li>
+                                    <a class="active" href="supportcenter.html"><i class="si si-support"></i><span class="sidebar-mini-hide">Support Center</span></a>
+                                </li>
+                                <li>
+                                    <a class="submenu" href="contact.html"><i class="si si-badge"></i><span class="sidebar-mini-hide">Report Hazard</span></a>
+                                </li>
+                                <li>
+                                    <a class="submenu" href="#"><i class="si si-rocket"></i><span class="sidebar-mini-hide">Help | FAQ</span></a>
+                                </li>
+                                <li class="nav-main-heading"><span class="sidebar-mini-hide">Know Your Area</span></li>
+                                <li>
+                                    <a class="submenu" href="#"><i class="si si-anchor"></i><span class="sidebar-mini-hide">A</span></a>
+                                </li>
+                                <li>
+                                    <a class="submenu" href="#"><i class="si si-pointer"></i><span class="sidebar-mini-hide">B</span></a>
+                                </li>
+                                <li>
+                                    <a class="submenu" href="#"><i class="si si-compass"></i><span class="sidebar-mini-hide">C</span></a>
+                                </li>
+                                <li>
+                                    <a class="submenu" href="#"><i class="si si-directions"></i><span class="sidebar-mini-hide">D</span></a>
+                                </li>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <li class="nav-main-heading"><span class="sidebar-mini-hide">Terms &amp; Privacy</span></li>
+                                <li>
+                                    <a class="submenu" href="#" data-toggle="modal" data-target="#modal-privacy"><i class="si si-info"></i><span class="sidebar-mini-hide">Privacy Policy</span></a>
+                                </li>
+                                <li>
+                                    <a class="submenu" href="#" data-toggle="modal" data-target="#modal-terms"><i class="si si-docs"></i><span class="sidebar-mini-hide">Terms &amp; Conditions</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- END Side Content -->
+                    </div>
+                    <!-- Sidebar Content -->
+                </div>
+                <!-- END Sidebar Scroll Container -->
+            </nav>
+            <!-- END Sidebar -->
+
+            <!-- Header -->
+            <header id="header-navbar" class="content-mini content-mini-full">
+                <!-- Header Navigation Left -->
+                <ul class="nav-header pull-left">
+                    <li class="hidden-md hidden-lg">
+                        <!-- Layout API, functionality initialized in App() -> uiLayoutApi() -->
+                        <button class="btn btn-default" data-toggle="layout" data-action="sidebar_toggle" type="button">
+                            <i class="fa fa-navicon"></i>
+                        </button>
+                    </li>
+                    <li class="hidden-xs hidden-sm">
+                        <!-- Layout API, functionality initialized in App() -> uiLayoutApi() -->
+                        <button class="btn btn-default" data-toggle="layout" data-action="sidebar_mini_toggle" type="button">
+                            <i class="fa fa-ellipsis-v"></i>
+                        </button>
+                    </li>
+                    <li class="visible-xs">
+                        <!-- Toggle class helper (for .js-header-search below), functionality initialized in App() -> uiToggleClass() -->
+                        <button class="btn btn-default" data-toggle="class-toggle" data-target=".js-header-search" data-class="header-search-xs-visible" type="button">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </li>
+                    <li class="js-header-search header-search">
+                        <form class="form-horizontal" action="index.html" method="post">
+                            <div class="form-material form-material-primary input-group remove-margin-t remove-margin-b">
+                                <input class="form-control" type="text" id="base-material-text" name="base-material-text" placeholder="Search..">
+                                <span class="input-group-addon"><i class="si si-magnifier"></i></span>
+                            </div>
+                        </form>
+                    </li>
+                </ul>
+                <!-- END Header Navigation Left -->
+            </header>
+            <!-- END Header -->
+
+            <!-- Main Container -->
+            <main id="main-container">
+                <!-- Page Header -->
+                <div class="content bg-gray-lighter">
+                    <div class="row items-push">
+                        <div class="col-sm-7">
+                            <h1 class="page-heading">
+                                Support Center <small>All centers in the right place!</small>
+                            </h1>
+                        </div>
+                        <div class="col-sm-5 text-right hidden-xs">
+                            <ol class="breadcrumb push-10-t">
+                                <li><a class="link-effect" href="index.html">Home</a></li>
+                                <li><a class="link-effect" href="">Support Center</a></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <!-- END Page Header -->
+
+                <!-- Page Content -->
+                <div class="content">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <!-- Contact -->
+                            <div class="block block-rounded">
+                                <div class="block-header">
+                                    <div class="block-title">Center A</div>
+                                </div>
+                                <div class="block-content block-content-full bg-primary text-center">
+                                    <img class="img-avatar img-avatar-thumb" src="../../assets/img/avatars/avatar9.jpg" alt="">
+                                    <div class="font-s13 push-10-t">Info</div>
+                                </div>
+                                <div class="block-content">
+                                    <div class="text-center push">
+                                        <a class="text-default" href="javascript:void(0)">
+                                            <i class="fa fa-2x fa-fw fa-facebook-square"></i>
+                                        </a>
+                                        <a class="text-info" href="javascript:void(0)">
+                                            <i class="fa fa-2x fa-fw fa-twitter-square"></i>
+                                        </a>
+                                        <a class="text-flat" href="javascript:void(0)">
+                                            <i class="fa fa-2x fa-fw fa-whatsapp"></i>
+                                        </a>
+                                    </div>
+                                    <table class="table table-borderless table-striped font-s13">
+                                        <tbody>
+                                            <tr>
+                                                <td class="font-w600" style="width: 30%;">Category</td>
+                                                <td>Medical</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="font-w600">Phone</td>
+                                                <td>+ 00 37237854</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="font-w600">Email</td>
+                                                <td>center1@knowyourcity.io</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- END Contact -->
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <!-- Contact -->
+                            <div class="block block-rounded">
+                                <div class="block-header">
+                                    <div class="block-title">Center B</div>
+                                </div>
+                                <div class="block-content block-content-full bg-primary text-center">
+                                    <img class="img-avatar img-avatar-thumb" src="../../assets/img/avatars/avatar6.jpg" alt="">
+                                    <div class="font-s13 push-10-t">Info</div>
+                                </div>
+                                <div class="block-content">
+                                    <div class="text-center push">
+                                        <a class="text-default" href="javascript:void(0)">
+                                            <i class="fa fa-2x fa-fw fa-facebook-square"></i>
+                                        </a>
+                                        <a class="text-info" href="javascript:void(0)">
+                                            <i class="fa fa-2x fa-fw fa-twitter-square"></i>
+                                        </a>
+                                        <a class="text-flat" href="javascript:void(0)">
+                                            <i class="fa fa-2x fa-fw fa-whatsapp"></i>
+                                        </a>
+                                    </div>
+                                    <table class="table table-borderless table-striped font-s13">
+                                        <tbody>
+                                            <tr>
+                                                <td class="font-w600" style="width: 30%;">Category</td>
+                                                <td>Medical</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="font-w600">Phone</td>
+                                                <td>+ 00 13776550</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="font-w600">Email</td>
+                                                <td>center2@knowyourcity.io</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- END Contact -->
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <!-- Contact -->
+                            <div class="block block-rounded">
+                                <div class="block-header">
+                                    <div class="block-title">Center C</div>
+                                </div>
+                                <div class="block-content block-content-full bg-primary text-center">
+                                    <img class="img-avatar img-avatar-thumb" src="../../assets/img/avatars/avatar4.jpg" alt="">
+                                    <div class="font-s13 push-10-t">Info</div>
+                                </div>
+                                <div class="block-content">
+                                    <div class="text-center push">
+                                        <a class="text-default" href="javascript:void(0)">
+                                            <i class="fa fa-2x fa-fw fa-facebook-square"></i>
+                                        </a>
+                                        <a class="text-info" href="javascript:void(0)">
+                                            <i class="fa fa-2x fa-fw fa-twitter-square"></i>
+                                        </a>
+                                        <a class="text-flat" href="javascript:void(0)">
+                                            <i class="fa fa-2x fa-fw fa-whatsapp"></i>
+                                        </a>
+                                    </div>
+                                    <table class="table table-borderless table-striped font-s13">
+                                        <tbody>
+                                            <tr>
+                                                <td class="font-w600" style="width: 30%;">Category</td>
+                                                <td>Food</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="font-w600">Phone</td>
+                                                <td>+ 00 31755676</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="font-w600">Email</td>
+                                                <td>center3@knowyourcity.io</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- END Contact -->
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <!-- Contact -->
+                            <div class="block block-rounded">
+                                <div class="block-header">
+                                    <div class="block-title">Center D</div>
+                                </div>
+                                <div class="block-content block-content-full bg-primary text-center">
+                                    <img class="img-avatar img-avatar-thumb" src="../../assets/img/avatars/avatar1.jpg" alt="">
+                                    <div class="font-s13 push-10-t">Info</div>
+                                </div>
+                                <div class="block-content">
+                                    <div class="text-center push">
+                                        <a class="text-default" href="javascript:void(0)">
+                                            <i class="fa fa-2x fa-fw fa-facebook-square"></i>
+                                        </a>
+                                        <a class="text-info" href="javascript:void(0)">
+                                            <i class="fa fa-2x fa-fw fa-twitter-square"></i>
+                                        </a>
+                                        <a class="text-flat" href="javascript:void(0)">
+                                            <i class="fa fa-2x fa-fw fa-whatsapp"></i>
+                                        </a>
+                                    </div>
+                                    <table class="table table-borderless table-striped font-s13">
+                                        <tbody>
+                                            <tr>
+                                                <td class="font-w600" style="width: 30%;">Category</td>
+                                                <td>Shelter</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="font-w600">Phone</td>
+                                                <td>+ 00 29651794</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="font-w600">Email</td>
+                                                <td>center4@knowyourcity.io</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- END Contact -->
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <!-- Contact -->
+                            <div class="block block-rounded">
+                                <div class="block-header">
+                                    <div class="block-title">Center E</div>
+                                </div>
+                                <div class="block-content block-content-full bg-primary text-center">
+                                    <img class="img-avatar img-avatar-thumb" src="../../assets/img/avatars/avatar14.jpg" alt="">
+                                    <div class="font-s13 push-10-t">Info</div>
+                                </div>
+                                <div class="block-content">
+                                    <div class="text-center push">
+                                        <a class="text-default" href="javascript:void(0)">
+                                            <i class="fa fa-2x fa-fw fa-facebook-square"></i>
+                                        </a>
+                                        <a class="text-info" href="javascript:void(0)">
+                                            <i class="fa fa-2x fa-fw fa-twitter-square"></i>
+                                        </a>
+                                        <a class="text-flat" href="javascript:void(0)">
+                                            <i class="fa fa-2x fa-fw fa-whatsapp"></i>
+                                        </a>
+                                    </div>
+                                    <table class="table table-borderless table-striped font-s13">
+                                        <tbody>
+                                            <tr>
+                                                <td class="font-w600" style="width: 30%;">Category</td>
+                                                <td>Food</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="font-w600">Phone</td>
+                                                <td>+ 00 78128967</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="font-w600">Email</td>
+                                                <td>center5@knowyourcity.io</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- END Contact -->
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <!-- Contact -->
+                            <div class="block block-rounded">
+                                <div class="block-header">
+                                    <div class="block-title">Center F</div>
+                                </div>
+                                <div class="block-content block-content-full bg-primary text-center">
+                                    <img class="img-avatar img-avatar-thumb" src="../../assets/img/avatars/avatar14.jpg" alt="">
+                                    <div class="font-s13 push-10-t">Info</div>
+                                </div>
+                                <div class="block-content">
+                                    <div class="text-center push">
+                                        <a class="text-default" href="javascript:void(0)">
+                                            <i class="fa fa-2x fa-fw fa-facebook-square"></i>
+                                        </a>
+                                        <a class="text-info" href="javascript:void(0)">
+                                            <i class="fa fa-2x fa-fw fa-twitter-square"></i>
+                                        </a>
+                                        <a class="text-flat" href="javascript:void(0)">
+                                            <i class="fa fa-2x fa-fw fa-whatsapp"></i>
+                                        </a>
+                                    </div>
+                                    <table class="table table-borderless table-striped font-s13">
+                                        <tbody>
+                                            <tr>
+                                                <td class="font-w600" style="width: 30%;">Category</td>
+                                                <td>Food</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="font-w600">Phone</td>
+                                                <td>+ 00 42538757</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="font-w600">Email</td>
+                                                <td>center6@knowyourcity.io</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- END Contact -->
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <!-- Contact -->
+                            <div class="block block-rounded">
+                                <div class="block-header">
+                                    <div class="block-title">Center G</div>
+                                </div>
+                                <div class="block-content block-content-full bg-primary text-center">
+                                    <img class="img-avatar img-avatar-thumb" src="../../assets/img/avatars/avatar9.jpg" alt="">
+                                    <div class="font-s13 push-10-t">Info</div>
+                                </div>
+                                <div class="block-content">
+                                    <div class="text-center push">
+                                        <a class="text-default" href="javascript:void(0)">
+                                            <i class="fa fa-2x fa-fw fa-facebook-square"></i>
+                                        </a>
+                                        <a class="text-info" href="javascript:void(0)">
+                                            <i class="fa fa-2x fa-fw fa-twitter-square"></i>
+                                        </a>
+                                        <a class="text-flat" href="javascript:void(0)">
+                                            <i class="fa fa-2x fa-fw fa-whatsapp"></i>
+                                        </a>
+                                    </div>
+                                    <table class="table table-borderless table-striped font-s13">
+                                        <tbody>
+                                            <tr>
+                                                <td class="font-w600" style="width: 30%;">Category</td>
+                                                <td>Food</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="font-w600">Phone</td>
+                                                <td>+ 00 55420227</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="font-w600">Email</td>
+                                                <td>center7@knowyourcity.io</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- END Contact -->
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <!-- Contact -->
+                            <div class="block block-rounded">
+                                <div class="block-header">
+                                    <div class="block-title">Center H</div>
+                                </div>
+                                <div class="block-content block-content-full bg-primary text-center">
+                                    <img class="img-avatar img-avatar-thumb" src="../../assets/img/avatars/avatar4.jpg" alt="">
+                                    <div class="font-s13 push-10-t">Info</div>
+                                </div>
+                                <div class="block-content">
+                                    <div class="text-center push">
+                                        <a class="text-default" href="javascript:void(0)">
+                                            <i class="fa fa-2x fa-fw fa-facebook-square"></i>
+                                        </a>
+                                        <a class="text-info" href="javascript:void(0)">
+                                            <i class="fa fa-2x fa-fw fa-twitter-square"></i>
+                                        </a>
+                                        <a class="text-flat" href="javascript:void(0)">
+                                            <i class="fa fa-2x fa-fw fa-whatsapp"></i>
+                                        </a>
+                                    </div>
+                                    <table class="table table-borderless table-striped font-s13">
+                                        <tbody>
+                                            <tr>
+                                                <td class="font-w600" style="width: 30%;">Category</td>
+                                                <td>Food</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="font-w600">Phone</td>
+                                                <td>+ 00 88999938</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="font-w600">Email</td>
+                                                <td>center8@knowyourcity.io</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- END Contact -->
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <!-- Contact -->
+                            <div class="block block-rounded">
+                                <div class="block-header">
+                                    <div class="block-title">Center I</div>
+                                </div>
+                                <div class="block-content block-content-full bg-primary text-center">
+                                    <img class="img-avatar img-avatar-thumb" src="../../assets/img/avatars/avatar7.jpg" alt="">
+                                    <div class="font-s13 push-10-t">Info</div>
+                                </div>
+                                <div class="block-content">
+                                    <div class="text-center push">
+                                        <a class="text-default" href="javascript:void(0)">
+                                            <i class="fa fa-2x fa-fw fa-facebook-square"></i>
+                                        </a>
+                                        <a class="text-info" href="javascript:void(0)">
+                                            <i class="fa fa-2x fa-fw fa-twitter-square"></i>
+                                        </a>
+                                        <a class="text-flat" href="javascript:void(0)">
+                                            <i class="fa fa-2x fa-fw fa-whatsapp"></i>
+                                        </a>
+                                    </div>
+                                    <table class="table table-borderless table-striped font-s13">
+                                        <tbody>
+                                            <tr>
+                                                <td class="font-w600" style="width: 30%;">Category</td>
+                                                <td>Medical</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="font-w600">Phone</td>
+                                                <td>+ 00 67691955</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="font-w600">Email</td>
+                                                <td>center9@knowyourcity.io</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- END Contact -->
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <!-- Contact -->
+                            <div class="block block-rounded">
+                                <div class="block-header">
+                                    <div class="block-title">Center J</div>
+                                </div>
+                                <div class="block-content block-content-full bg-primary text-center">
+                                    <img class="img-avatar img-avatar-thumb" src="../../assets/img/avatars/avatar12.jpg" alt="">
+                                    <div class="font-s13 push-10-t">Info</div>
+                                </div>
+                                <div class="block-content">
+                                    <div class="text-center push">
+                                        <a class="text-default" href="javascript:void(0)">
+                                            <i class="fa fa-2x fa-fw fa-facebook-square"></i>
+                                        </a>
+                                        <a class="text-info" href="javascript:void(0)">
+                                            <i class="fa fa-2x fa-fw fa-twitter-square"></i>
+                                        </a>
+                                        <a class="text-flat" href="javascript:void(0)">
+                                            <i class="fa fa-2x fa-fw fa-whatsapp"></i>
+                                        </a>
+                                    </div>
+                                    <table class="table table-borderless table-striped font-s13">
+                                        <tbody>
+                                            <tr>
+                                                <td class="font-w600" style="width: 30%;">Category</td>
+                                                <td>Shelter</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="font-w600">Phone</td>
+                                                <td>+ 00 70597839</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="font-w600">Email</td>
+                                                <td>center10@knowyourcity.io</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- END Contact -->
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <!-- Contact -->
+                            <div class="block block-rounded">
+                                <div class="block-header">
+                                    <div class="block-title">Center K</div>
+                                </div>
+                                <div class="block-content block-content-full bg-primary text-center">
+                                    <img class="img-avatar img-avatar-thumb" src="../../assets/img/avatars/avatar10.jpg" alt="">
+                                    <div class="font-s13 push-10-t">Info</div>
+                                </div>
+                                <div class="block-content">
+                                    <div class="text-center push">
+                                        <a class="text-default" href="javascript:void(0)">
+                                            <i class="fa fa-2x fa-fw fa-facebook-square"></i>
+                                        </a>
+                                        <a class="text-info" href="javascript:void(0)">
+                                            <i class="fa fa-2x fa-fw fa-twitter-square"></i>
+                                        </a>
+                                        <a class="text-flat" href="javascript:void(0)">
+                                            <i class="fa fa-2x fa-fw fa-whatsapp"></i>
+                                        </a>
+                                    </div>
+                                    <table class="table table-borderless table-striped font-s13">
+                                        <tbody>
+                                            <tr>
+                                                <td class="font-w600" style="width: 30%;">Category</td>
+                                                <td>Medical</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="font-w600">Phone</td>
+                                                <td>+ 00 84006652</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="font-w600">Email</td>
+                                                <td>center11@knowyourcity.io</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- END Contact -->
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <!-- Contact -->
+                            <div class="block block-rounded">
+                                <div class="block-header">
+                                    <div class="block-title">Center L</div>
+                                </div>
+                                <div class="block-content block-content-full bg-primary text-center">
+                                    <img class="img-avatar img-avatar-thumb" src="../../assets/img/avatars/avatar5.jpg" alt="">
+                                    <div class="font-s13 push-10-t">Info</div>
+                                </div>
+                                <div class="block-content">
+                                    <div class="text-center push">
+                                        <a class="text-default" href="javascript:void(0)">
+                                            <i class="fa fa-2x fa-fw fa-facebook-square"></i>
+                                        </a>
+                                        <a class="text-info" href="javascript:void(0)">
+                                            <i class="fa fa-2x fa-fw fa-twitter-square"></i>
+                                        </a>
+                                        <a class="text-flat" href="javascript:void(0)">
+                                            <i class="fa fa-2x fa-fw fa-whatsapp"></i>
+                                        </a>
+                                    </div>
+                                    <table class="table table-borderless table-striped font-s13">
+                                        <tbody>
+                                            <tr>
+                                                <td class="font-w600" style="width: 30%;">Category</td>
+                                                <td>Medical</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="font-w600">Phone</td>
+                                                <td>+ 00 23894958</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="font-w600">Email</td>
+                                                <td>center12@knowyourcity.io</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- END Contact -->
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <!-- Contact -->
+                            <div class="block block-rounded">
+                                <div class="block-header">
+                                    <div class="block-title">Center M</div>
+                                </div>
+                                <div class="block-content block-content-full bg-primary text-center">
+                                    <img class="img-avatar img-avatar-thumb" src="../../assets/img/avatars/avatar14.jpg" alt="">
+                                    <div class="font-s13 push-10-t">Info</div>
+                                </div>
+                                <div class="block-content">
+                                    <div class="text-center push">
+                                        <a class="text-default" href="javascript:void(0)">
+                                            <i class="fa fa-2x fa-fw fa-facebook-square"></i>
+                                        </a>
+                                        <a class="text-info" href="javascript:void(0)">
+                                            <i class="fa fa-2x fa-fw fa-twitter-square"></i>
+                                        </a>
+                                        <a class="text-flat" href="javascript:void(0)">
+                                            <i class="fa fa-2x fa-fw fa-whatsapp"></i>
+                                        </a>
+                                    </div>
+                                    <table class="table table-borderless table-striped font-s13">
+                                        <tbody>
+                                            <tr>
+                                                <td class="font-w600" style="width: 30%;">Category</td>
+                                                <td>Food</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="font-w600">Phone</td>
+                                                <td>+ 00 28426818</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="font-w600">Email</td>
+                                                <td>center13@knowyourcity.io</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- END Contact -->
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <!-- Contact -->
+                            <div class="block block-rounded">
+                                <div class="block-header">
+                                    <div class="block-title">Center N</div>
+                                </div>
+                                <div class="block-content block-content-full bg-primary text-center">
+                                    <img class="img-avatar img-avatar-thumb" src="../../assets/img/avatars/avatar2.jpg" alt="">
+                                    <div class="font-s13 push-10-t">Info</div>
+                                </div>
+                                <div class="block-content">
+                                    <div class="text-center push">
+                                        <a class="text-default" href="javascript:void(0)">
+                                            <i class="fa fa-2x fa-fw fa-facebook-square"></i>
+                                        </a>
+                                        <a class="text-info" href="javascript:void(0)">
+                                            <i class="fa fa-2x fa-fw fa-twitter-square"></i>
+                                        </a>
+                                        <a class="text-flat" href="javascript:void(0)">
+                                            <i class="fa fa-2x fa-fw fa-whatsapp"></i>
+                                        </a>
+                                    </div>
+                                    <table class="table table-borderless table-striped font-s13">
+                                        <tbody>
+                                            <tr>
+                                                <td class="font-w600" style="width: 30%;">Category</td>
+                                                <td>Shelter</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="font-w600">Phone</td>
+                                                <td>+ 00 30453796</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="font-w600">Email</td>
+                                                <td>center14@knowyourcity.io</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- END Contact -->
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <!-- Contact -->
+                            <div class="block block-rounded">
+                                <div class="block-header">
+                                    <div class="block-title">Center O</div>
+                                </div>
+                                <div class="block-content block-content-full bg-primary text-center">
+                                    <img class="img-avatar img-avatar-thumb" src="../../assets/img/avatars/avatar10.jpg" alt="">
+                                    <div class="font-s13 push-10-t">Info</div>
+                                </div>
+                                <div class="block-content">
+                                    <div class="text-center push">
+                                        <a class="text-default" href="javascript:void(0)">
+                                            <i class="fa fa-2x fa-fw fa-facebook-square"></i>
+                                        </a>
+                                        <a class="text-info" href="javascript:void(0)">
+                                            <i class="fa fa-2x fa-fw fa-twitter-square"></i>
+                                        </a>
+                                        <a class="text-flat" href="javascript:void(0)">
+                                            <i class="fa fa-2x fa-fw fa-whatsapp"></i>
+                                        </a>
+                                    </div>
+                                    <table class="table table-borderless table-striped font-s13">
+                                        <tbody>
+                                            <tr>
+                                                <td class="font-w600" style="width: 30%;">Category</td>
+                                                <td>Medical</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="font-w600">Phone</td>
+                                                <td>+ 00 50014953</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="font-w600">Email</td>
+                                                <td>center15@knowyourcity.io</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- END Contact -->
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <!-- Contact -->
+                            <div class="block block-rounded">
+                                <div class="block-header">
+                                    <div class="block-title">Center P</div>
+                                </div>
+                                <div class="block-content block-content-full bg-primary text-center">
+                                    <img class="img-avatar img-avatar-thumb" src="../../assets/img/avatars/avatar1.jpg" alt="">
+                                    <div class="font-s13 push-10-t">Info</div>
+                                </div>
+                                <div class="block-content">
+                                    <div class="text-center push">
+                                        <a class="text-default" href="javascript:void(0)">
+                                            <i class="fa fa-2x fa-fw fa-facebook-square"></i>
+                                        </a>
+                                        <a class="text-info" href="javascript:void(0)">
+                                            <i class="fa fa-2x fa-fw fa-twitter-square"></i>
+                                        </a>
+                                        <a class="text-flat" href="javascript:void(0)">
+                                            <i class="fa fa-2x fa-fw fa-whatsapp"></i>
+                                        </a>
+                                    </div>
+                                    <table class="table table-borderless table-striped font-s13">
+                                        <tbody>
+                                            <tr>
+                                                <td class="font-w600" style="width: 30%;">Category</td>
+                                                <td>Shelter</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="font-w600">Phone</td>
+                                                <td>+ 00 36836853</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="font-w600">Email</td>
+                                                <td>center16@knowyourcity.io</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- END Contact -->
+                        </div>
+                    </div>
+                </div>
+                <!-- END Page Content -->
+            </main>
+            <!-- END Main Container -->
+
+            <!-- Footer -->
+            <footer id="page-footer" class="content-mini content-mini-full font-s12 bg-gray-lighter clearfix">
+                <div class="pull-right">
+                    Crafted with <i class="fa fa-heart text-city"></i> by <a class="font-w600" href="#" target="_blank">code4Africa</a>
+                </div>
+                <div class="pull-left">
+                    <a class="font-w600" href="#" target="_blank">KnowYourCity</a> &copy; <span class="js-year-copy"></span>
+                </div>
+            </footer>
+            <!-- END Footer -->
+        </div>
+        <!-- END Page Container -->
+
+        <!-- Terms Modal -->
+        <div class="modal fade" id="modal-terms" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-popout">
+                <div class="modal-content">
+                    <div class="block block-themed block-transparent remove-margin-b">
+                        <div class="block-header bg-primary-dark">
+                            <ul class="block-options">
+                                <li>
+                                    <button data-dismiss="modal" type="button"><i class="si si-close"></i></button>
+                                </li>
+                            </ul>
+                            <h3 class="block-title">Terms &amp; Conditions</h3>
+                        </div>
+                        <div class="block-content">
+                            <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
+                            <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
+                            <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
+                            <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
+                            <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-sm btn-primary" type="button" data-dismiss="modal"><i class="fa fa-check"></i> Agree | Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END Terms Modal -->
+
+        <!-- Privacy Modal -->
+        <div class="modal fade" id="modal-privacy" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-popout">
+                <div class="modal-content">
+                    <div class="block block-themed block-transparent remove-margin-b">
+                        <div class="block-header bg-primary-dark">
+                            <ul class="block-options">
+                                <li>
+                                    <button data-dismiss="modal" type="button"><i class="si si-close"></i></button>
+                                </li>
+                            </ul>
+                            <h3 class="block-title">Privacy Policy</h3>
+                        </div>
+                        <div class="block-content">
+                            <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
+                            <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
+                            <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
+                            <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
+                            <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-sm btn-primary" type="button" data-dismiss="modal"><i class="fa fa-check"></i> Agree | Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END Privacy Modal -->
+
+        <!-- KnowYourCity Core JS: jQuery, Bootstrap, slimScroll, scrollLock, Appear, CountTo, Placeholder, Cookie and App.js -->
+        <script src="../../assets/js/kyc.min.js"></script>
+
+        <!-- Page JS Plugins + Page JS Code -->
+    </body>
+</html>
