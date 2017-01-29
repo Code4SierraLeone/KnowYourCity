@@ -2,7 +2,7 @@
 ## #KnowYourCity Campaign [Code4SierraLeone]
 =============================================
 
-Know Your City Campaign aims at mapping all the amenities within disaster-prone areas in Freetown, Sierra Leone, so as to help the occupants get help in the case of a disaster in the regions. The mapping will give details in terms of directions and distance from their current locations as well as the services offered in those areas.
+Know Your City Campaign aims at mapping all the amenities within Informal Settlement areas in Freetown, Sierra Leone, so as to help the occupants get help in the case of a disaster in the regions. The mapping will give details in terms of directions and distance from their current locations as well as the services offered in those areas.
 
 For the User Interface Design and Logic Implementation, I have used the following resources(please refer to the documentation(`to come`) for further details on each)
 * `jQuery`
@@ -12,7 +12,7 @@ For the User Interface Design and Logic Implementation, I have used the followin
 * `JavaScript`
 * `Golang`
 * `Firebase`
-* `Postgres DB`
+* `MongoDB`
 
 
 ### Quick Instructions
