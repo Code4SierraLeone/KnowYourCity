@@ -13,7 +13,7 @@ import (
 
 	"github.com/gorilla/mux"
 
-	"github.com/Code4SierraLeone/KnowYourCity/base" // interesting approach here, have to look it up
+	"github.com/Code4SierraLeone/KnowYourCity/base"
 	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
 )

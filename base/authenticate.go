@@ -25,6 +25,7 @@ type Authentication struct {
 
 var localSession *mgo.Session
 
+// Setup creates an instance session with new unique key per session
 func (auth *Authentication) Setup(session *mgo.Session) {
 	auth.dbCollection = session.DB("system_users").C("sys_authentication")
 	localSession = session.Copy()
@@ -60,6 +61,8 @@ func (auth *Authentication) Update() error {
 	change := bson.M{"$set": auth}
 	return auth.dbCollection.Update(query, change)
 }
+
+// AuthenticateAdmin queries the db for admin user and verifies auth details
 func (auth *Authentication) AuthenticateAdmin(email, pass string, client *rpc.Client) error {
 	if auth.dbCollection == nil {
 		return errors.New("Uninitialized Object Authentication")
@@ -88,6 +91,7 @@ func (auth *Authentication) AuthenticateAdmin(email, pass string, client *rpc.Cl
 	return nil
 }
 
+// Complete2F completes the Second Factor authentication 
 func (auth *Authentication) Complete2F(uid string, code int) error {
 	if auth.dbCollection == nil {
 		return errors.New("Uninitialized Object Authentication")
@@ -95,8 +99,9 @@ func (auth *Authentication) Complete2F(uid string, code int) error {
 	return auth.dbCollection.Find(bson.M{"uid": uid, "code": code}).One(auth)
 }
 
+// AuthenticateSysUser authenticates the user and on success creates a new session
 func (auth *Authentication) AuthenticateSysUser(email, pass string) error {
-	//add session
+	// add session
 	if auth.dbCollection == nil {
 		return errors.New("Uninitialized Object Authentication")
 	}

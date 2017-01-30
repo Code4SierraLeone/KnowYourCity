@@ -20,7 +20,7 @@ type Admin struct {
 	dbCollection *mgo.Collection `bson:"-" json:"-"`
 }
 
-// Setup sets up the collection to use for the mongo instance
+// Setup sets up the collection to use for the mongodb instance
 func (ad *Admin) Setup(dbSession *mgo.Session) {
 	ad.dbCollection = dbSession.DB("system_users").C("admins")
 	index := mgo.Index{
@@ -71,7 +71,7 @@ func (ad *Admin) Get(email, uid string) error {
 
 }
 
-// GetAllAdmins gets all admins
+// GetAllAdmins queries the database for,` and returns all admins
 func GetAllAdmins(session *mgo.Session) ([]Admin, error) {
 	collection := session.DB("system_users").C("admins")
 	var admins []Admin
