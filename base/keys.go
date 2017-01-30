@@ -8,6 +8,7 @@ import (
 	"gopkg.in/mgo.v2/bson"
 )
 
+// Keys holds metadata about unique key
 type Keys struct {
 	ID           bson.ObjectId   `bson:"_id" json:"-"`
 	Code         string          `bson:"code" json:"code"`
@@ -19,6 +20,7 @@ func (keys *Keys) Setup(dbSession *mgo.Session) {
 	keys.dbCollection = dbSession.DB("system_setup").C("keys")
 }
 
+// 
 func (keys *Keys) Create() error {
 	tz, _ := base.GetTimeZone()
 	keys.Timestamp = time.Now().In(tz).Format(time.ANSIC)

@@ -39,6 +39,8 @@ func isValidSecret(dbSession *mgo.Session, secret string) bool {
 	}
 	return secret == k[0].Code
 }
+
+// SecretCode checks for the validity of the secret code entered by admin user
 func SecretCode(next http.HandlerFunc) http.HandlerFunc {
 	return func(rw http.ResponseWriter, r *http.Request) {
 		db := GetVar(r, "db").(*mgo.Session)
@@ -51,6 +53,7 @@ func SecretCode(next http.HandlerFunc) http.HandlerFunc {
 	}
 }
 
+// GetSecretCode queries the db for the secret code
 func GetSecretCode(rw http.ResponseWriter, r *http.Request) {
 	dbSession := GetVar(r, "db").(*mgo.Session)
 	defer RemoveVars(r)
@@ -66,6 +69,7 @@ func GetSecretCode(rw http.ResponseWriter, r *http.Request) {
 	base.RespondSuccess(rw, r, ks[0])
 }
 
+// SetSecretCode allows the admin user to set a new secret code
 func SetSecretCode(rw http.ResponseWriter, r *http.Request) {
 	dbSession := GetVar(r, "db").(*mgo.Session)
 	defer RemoveVars(r)
@@ -91,7 +95,7 @@ func SetSecretCode(rw http.ResponseWriter, r *http.Request) {
 	base.RespondSuccess(rw, r, "Success")
 }
 
-// Handles the registration of a new admin account
+// Register handles the registration of a new admin user account
 func Register(rw http.ResponseWriter, r *http.Request) {
 	// Get request variables
 	dbSession := GetVar(r, "db").(*mgo.Session)
@@ -144,11 +148,11 @@ func Register(rw http.ResponseWriter, r *http.Request) {
 		return
 	}
 	LogInfo("Created auth details")
-	// feedchan <- time.Now().String() + "::" + admin.FirstName + " registered for a SuperAdmin Account"
+	// feedchan <- time.Now().String() + "::" + admin.UserName + " registered for a Admin Account"
 	base.RespondSuccess(rw, r, "success")
 }
 
-// Handles admin users login and initiates sessions
+// Login handles admin users login and creates new sessions
 func Login(rw http.ResponseWriter, r *http.Request) {
 	dbSession := GetVar(r, "db").(*mgo.Session)
 	client := GetVar(r, "rpc").(*rpc.Client)
@@ -171,7 +175,7 @@ func Login(rw http.ResponseWriter, r *http.Request) {
 	base.RespondSuccess(rw, r, auth.UID)
 }
 
-// Just beefing up security to ensure that authentic users use the admin priviledges
+// L2Factor ensures double security to ensure that authentic users use the admin priviledges
 func L2Factor(rw http.ResponseWriter, r *http.Request) {
 	dbSession := GetVar(r, "db").(*mgo.Session)
 	client := GetVar(r, "rpc").(*rpc.Client)
@@ -208,7 +212,7 @@ func L2Factor(rw http.ResponseWriter, r *http.Request) {
 }
 
 
-// Handles admin user logout and clearance of the current sessions
+// Logout handles admin user logout and stopping of their current sessions
 func Logout(rw http.ResponseWriter, r *http.Request) {
 	uid := GetVar(r, "uid").(string)
 	client := GetVar(r, "rpc").(*rpc.Client)
@@ -226,7 +230,7 @@ func Logout(rw http.ResponseWriter, r *http.Request) {
 	base.RespondSuccess(rw, r, "success")
 }
 
-// Handles Forgotten password reset
+// ForgotPass handles Forgotten password reset
 func ForgotPass(rw http.ResponseWriter, r *http.Request) {
 	dbSession := base.GetVar(r, "db").(*mgo.Session)
 	defer base.RemoveVars(r)
@@ -290,7 +294,7 @@ func ResetPassPage(rw http.ResponseWriter, r *http.Request) {
 	// render page
 }
 
-// Handles the reset password request
+// ResetPass handles the reset password request
 func ResetPass(rw http.ResponseWriter, r *http.Request) {
 	dbSession := base.GetVar(r, "db").(*mgo.Session)
 	defer base.RemoveVars(r)

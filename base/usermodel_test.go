@@ -52,3 +52,20 @@ func TestDeleteA(t *testing.T) {
 		t.Error(err)
 	}
 }
+
+func TestUpdateA(t *testing.T) {
+	mSession, err := mgo.Dial("localhost")
+	if err != nil {
+		t.Fatal("Session Creation failed")
+	}
+	ad := new(Admin)
+	ad.Setup(mSession)
+	ad.Id = bson.NewObjectId()
+	ad.UID = "test"
+	ad.Email = "g@g.com"
+	ad.UserName = "test"
+	ad.Designation = "1"
+	if err := ad.Update(); err != nil {
+		t.Fatal(err)
+	}
+}
