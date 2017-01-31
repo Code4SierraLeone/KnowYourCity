@@ -66,34 +66,34 @@ func setAccountRoutes(router *mux.Router, dbSession *mgo.Session) {
 
 // ReportFatal
 func ReportFatal(rw http.ResponseWriter, r *http.Request, err error) {
-	cometutils.RespondError(rw, r, err)
+	base.RespondError(rw, r, err)
 }
 
 // LogError logs errors to file and stderr
 func LogError(err error) {
 	color.Set(color.BgRed)
-	cometutils.Error.Println(errors.Wrap(err, 1).ErrorStack())
+	base.Error.Println(errors.Wrap(err, 1).ErrorStack())
 	color.Unset()
 }
 
 // LogWarning logs warnings to stdout
 func LogWarning(info interface{}) {
 	color.Set(color.BgYellow)
-	cometutils.Warning.Println(info)
+	base.Warning.Println(info)
 	color.Unset()
 }
 
 // LogDebug logs debug info to stdout
 func LogDebug(info interface{}) {
 	color.Set(color.BgCyan)
-	cometutils.Debug.Println(info)
+	base.Debug.Println(info)
 	color.Unset()
 }
 
 // LogInfo logs info to
 func LogInfo(info interface{}) {
 	color.Set(color.BgGreen)
-	cometutils.Info.Println(info)
+	base.Info.Println(info)
 	color.Unset()
 }
 
