@@ -6,7 +6,6 @@ import (
 	"log"
 	"flag"
 	"net/http"
-	"flag"
 
 	"github.com/Code4SierraLeone/KnowYourCity/base"
 
