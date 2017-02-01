@@ -18,3 +18,4 @@ appengine-sdk
 build/root
 tmp
 config/tls.*
+.idea/
