@@ -2,11 +2,10 @@ package base
 
 import (
 	"errors"
-	"log"
 	"net/rpc"
 	"time"
 
-	"github.com/Code4SierraLeone/KnowYourCity/base"
+	"github.com/Code4SierraLeone/KnowYourCity/utils"
 
 	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
@@ -41,7 +40,7 @@ func (auth *Authentication) Create() error {
 	if auth.dbCollection == nil {
 		return errors.New("Uninitialized Object Authentication")
 	}
-	tz, _ := base.GetTimeZone()
+	tz, _ := utils.GetTimeZone()
 	auth.LastLogin = time.Now().In(tz).Format(time.ANSIC)
 	return auth.dbCollection.Insert(auth)
 }
@@ -87,7 +86,6 @@ func (auth *Authentication) AuthenticateAdmin(email, pass string, client *rpc.Cl
 	if err := auth.Update(); err != nil {
 		return err
 	}
-	base.SendActivation(email, authCode)
 	return nil
 }
 

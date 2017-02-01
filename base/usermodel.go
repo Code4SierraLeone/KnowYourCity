@@ -4,7 +4,7 @@ import (
 	"errors"
 	"time"
 
-	"github.com/Code4SierraLeone/KnowYourCity/base"
+	"github.com/Code4SierraLeone/KnowYourCity/utils"
 
 	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
@@ -36,7 +36,7 @@ func (ad *Admin) Create() error {
 	if ad.dbCollection == nil {
 		return errors.New("Uninitialized Object Admin")
 	}
-	tz, _ := base.GetTimeZone()
+	tz, _ := utils.GetTimeZone()
 	ad.Timestamp = time.Now().In(tz).Format(time.ANSIC)
 	return ad.dbCollection.Insert(ad)
 }

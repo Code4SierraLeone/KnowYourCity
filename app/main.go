@@ -2,18 +2,12 @@
 package main
 
 import (
-	"encoding/json"
 	"log"
 	"flag"
 	"net/http"
-	"flag"
 
-	"github.com/Code4SierraLeone/KnowYourCity/base"
 
 	"gopkg.in/mgo.v2"
-	"github.com/bitly/go-nsq"
-	"github.com/fatih/color"
-	"github.com/go-errors/errors"
 	"github.com/gorilla/mux"
 	"github.com/gorilla/securecookie"
 )
@@ -62,39 +56,6 @@ func setAccountRoutes(router *mux.Router, dbSession *mgo.Session) {
 
 	router.HandleFunc("/keys/code/get", withCORS(withClient(DbSession(dbSession, GetSecretCode))))
 	router.HandleFunc("/keys/code/set", withCORS(withClient(DbSession(dbSession, SetSecretCode))))
-}
-
-// ReportFatal
-func ReportFatal(rw http.ResponseWriter, r *http.Request, err error) {
-	base.RespondError(rw, r, err)
-}
-
-// LogError logs errors to file and stderr
-func LogError(err error) {
-	color.Set(color.BgRed)
-	base.Error.Println(errors.Wrap(err, 1).ErrorStack())
-	color.Unset()
-}
-
-// LogWarning logs warnings to stdout
-func LogWarning(info interface{}) {
-	color.Set(color.BgYellow)
-	base.Warning.Println(info)
-	color.Unset()
-}
-
-// LogDebug logs debug info to stdout
-func LogDebug(info interface{}) {
-	color.Set(color.BgCyan)
-	base.Debug.Println(info)
-	color.Unset()
-}
-
-// LogInfo logs info to
-func LogInfo(info interface{}) {
-	color.Set(color.BgGreen)
-	base.Info.Println(info)
-	color.Unset()
 }
 
 
