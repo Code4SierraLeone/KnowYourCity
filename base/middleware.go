@@ -3,9 +3,10 @@ package base
 import (
 	"net/http"
 
-	"github.com/Code4SierraLeone/KnowYourCity/base"
+	"github.com/Code4SierraLeone/KnowYourCity/utils"
 
 	"gopkg.in/mgo.v2"
+	"net/rpc"
 )
 
 func withCORS(next http.HandlerFunc) http.HandlerFunc {
@@ -19,7 +20,7 @@ func withUID(next http.HandlerFunc) http.HandlerFunc {
 	return func(rw http.ResponseWriter, r *http.Request) {
 		uid := r.FormValue("uid")
 		if uid == "" {
-			base.RespondError(rw, r, "No UID")
+			utils.RespondError(rw, r, "No UID")
 			return
 		}
 		client, err := rpc.DialHTTP("tcp", ":9004")
@@ -34,11 +35,11 @@ func withUID(next http.HandlerFunc) http.HandlerFunc {
 			return
 		}
 		if !valid {
-			base.RespondError(rw, r, "Invalid UID. No Session exists")
+			utils.RespondError(rw, r, "Invalid UID. No Session exists")
 			return
 		}
 		if !CheckSession(r.Header.Get("X-FORWARDED-FOR"), uid) {
-			base.RespondCustom(rw, r, 10, "Invalid IP")
+			utils.RespondCustom(rw, r, 10, "Invalid IP")
 			return
 		}
 		SetVar(r, "uid", uid)

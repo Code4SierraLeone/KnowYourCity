@@ -2,13 +2,11 @@
 package main
 
 import (
-	"io"
 	"log"
 	"net/http"
 	"strings"
 	"time"
 	"net/rpc"
-	"os"
 	"strconv"
 
 	"github.com/gorilla/mux"
