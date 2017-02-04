@@ -18,7 +18,7 @@ var BaseCompMaps = function() {
             scrollwheel: false
             }).addMarkers([
             // sample marked data
-            // I definitely will have to implement this in a better way @samson
+            // I definitely will have to implement this in a better way using GeoJSON @samson
             // TODO Look up the set up instruction here <https://developers.google.com/maps/documentation/javascript/examples/infowindow-simple-max>
             {lat: 8.48, lng: -13.23, title: 'Amenity #1', animation: google.maps.Animation.BOUNCE, infoWindow: {content: '<strong>Amenity #1</strong><p><a class=h3 href="supportcenter.html">Central Hospital</a></p><p>Offers Quick Emergency Services</p>'}},
             {lat: 8.49, lng: -13.23, title: 'Amenity #2', animation: google.maps.Animation.BOUNCE, infoWindow: {content: '<strong>Amenity #2</strong><p><a class=h3 href="supportcenter.html">Food Center</a></p><p>Offers Quick Emergency Services</p>'}},
@@ -36,35 +36,7 @@ var BaseCompMaps = function() {
             {lat: 8.487, lng: -13.213, title: 'Amenity #4', animation: google.maps.Animation.BOUNCE, infoWindow: {content: '<strong>Amenity #4</strong><p><a class=h3 href="supportcenter.html">WHO Center</a></p><p>Offers Quick Emergency Services</p>'}},
             {lat: 8.488, lng: -13.226, title: 'Amenity #5', animation: google.maps.Animation.BOUNCE, infoWindow: {content: '<strong>Amenity #5</strong><p><a class=h3 href="supportcenter.html">RedCross</a></p><p>Offers Quick Emergency Services</p>'}},
             {lat: 8.481, lng: -13.2612, title: 'Amenity #8', animation: google.maps.Animation.BOUNCE, infoWindow: {content: '<strong>Amenity #5</strong><p><a class=h3 href="supportcenter.html">Clinic</a></p><p>Offers Quick Emergency Services</p>'}}
-        ]);
-        
-      //   // <script> tag set to the URL as the source for GeoJSON data.
-      //   // Meant to replace the markers above when the backend is set
-      //   var script = document.createElement('script');
-      //   // This uses a local copy of the GeoJSON stored at
-      //   // http://...geojsonp
-      //   script.src = 'http://...GeoJSONP.js';
-      //   document.getElementsByTagName('head')[0].appendChild(script);
-      // }
-
-      // // Loop through the results array and place a marker for each
-      // // set of coordinates.
-      // // You must define the callback script in your code:
-      // window.eqfeed_callback = function(results) {
-      //   for (var i = 0; i < results.features.length; i++) {
-      //     var coords = results.features[i].geometry.coordinates;
-      //     var latLng = new google.maps.LatLng(coords[1],coords[0]);
-      //     var marker = new google.maps.Marker({
-      //       position: latLng,
-      //       map: map
-      //     });
-      //   }
-      // }
-
-        // var trafficLayer = new google.maps.TrafficLayer();
-        //     trafficLayer.setMap(map);
-
-        GMaps.geolocate({
+        ]).geolocate({
             success: function(position) {
                 gmapGeolocation.setCenter(position.coords.latitude, position.coords.longitude);
                 gmapGeolocation.addMarker({

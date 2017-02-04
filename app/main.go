@@ -60,7 +60,7 @@ func main() {
 
 
 	http.Handle("/", r)
-	fs := JustFilesFilesystem{http.Dir("static/")}
+	fs := JustFilesFilesystem{http.Dir("assets/")}
 	http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(fs)))
 
 	// starting in goroutines with error reporting, thanks to davecheney from #go-nuts
