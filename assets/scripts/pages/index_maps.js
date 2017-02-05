@@ -46,6 +46,9 @@ var BaseCompMaps = function() {
             infowindow.open(map, marker);
         });
 
+        var trafficLayer = new google.maps.TrafficLayer();
+        trafficLayer.setMap(map);
+
         // // Create a <script> tag and set the Amenities URL as the source.
         // var script = document.createElement('script');
         // // This example uses a local copy of the GeoJSON stored at
