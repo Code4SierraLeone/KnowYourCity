@@ -8,65 +8,104 @@ var BaseCompMaps = function() {
     // Gmaps.js, for more examples you can check out https://hpneo.github.io/gmaps/
 
     // Init Regular Map on the index.html page
-    var initMap = function(){
-        // Init Map
-        var $map = new GMaps({
-            div: '#js-map',
-            lat: 8.484146,
-            lng: -13.22867,
+    function initMap() {
+
+        // Here one can list all the locations to be mapped on the map, which will then be called when marking
+        // Optionally, one can store this information within the same url and just import the data
+        var freetown = {lat: 8.484146, lng: -13.22867};
+        var map = new google.maps.Map(document.getElementById('map'),{
             zoom: 15,
+            center: freetown,
             scrollwheel: false
-            }).addMarkers([
-            // sample marked data
-            // I definitely will have to implement this in a better way using GeoJSON @samson
-            // TODO Look up the set up instruction here <https://developers.google.com/maps/documentation/javascript/examples/infowindow-simple-max>
-            {lat: 8.48, lng: -13.23, title: 'Amenity #1', animation: google.maps.Animation.BOUNCE, infoWindow: {content: '<strong>Amenity #1</strong><p><a class=h3 href="supportcenter.html">Central Hospital</a></p><p>Offers Quick Emergency Services</p>'}},
-            {lat: 8.49, lng: -13.23, title: 'Amenity #2', animation: google.maps.Animation.BOUNCE, infoWindow: {content: '<strong>Amenity #2</strong><p><a class=h3 href="supportcenter.html">Food Center</a></p><p>Offers Quick Emergency Services</p>'}},
-            {lat: 8.49, lng: -13.21, title: 'Amenity #3', animation: google.maps.Animation.BOUNCE, infoWindow: {content: '<strong>Amenity #3</strong><p><a class=h3 href="supportcenter.html">RedCross</a></p><p>Offers Quick Emergency Services</p>'}},
-            {lat: 8.48, lng: -13.21, title: 'Amenity #4', animation: google.maps.Animation.BOUNCE, infoWindow: {content: '<strong>Amenity #4</strong><p><a class=h3 href="supportcenter.html">Food Center</a></p><p>Offers Quick Emergency Services</p>'}},
-            {lat: 8.484, lng: -13.222, title: 'Amenity #5', animation: google.maps.Animation.BOUNCE, infoWindow: {content: '<strong>Amenity #5</strong><p><a class=h3 href="supportcenter.html">Support Center</a></p><p>Offers Quick Emergency Services</p>'}},
-            {lat: 8.483, lng: -13.24, title: 'Amenity #6', animation: google.maps.Animation.BOUNCE, infoWindow: {content: '<strong>Amenity #5</strong><p><a class=h3 href="supportcenter.html">Support Center</a></p><p>Offers Quick Emergency Services</p>'}},
-            {lat: 8.482, lng: -13.25, title: 'Amenity #7', animation: google.maps.Animation.BOUNCE, infoWindow: {content: '<strong>Hello Hospital</strong><p><a class=h3 href="supportcenter.html">Clinic</a></p><p>Offers Quick Emergency Services</p>'}},
-            {lat: 8.485, lng: -13.214, title: 'Amenity #4', animation: google.maps.Animation.BOUNCE, infoWindow: {content: '<strong>Amenity #4</strong><p><a class=h3 href="supportcenter.html">Red Cross</a></p><p>Offers Quick Emergency Services</p>'}},
-            {lat: 8.486, lng: -13.223, title: 'Amenity #5', animation: google.maps.Animation.BOUNCE, infoWindow: {content: '<strong>Amenity #5</strong><p><a class=h3 href="supportcenter.html">Food Center</a></p><p>Offers Quick Emergency Services</p>'}},
-            {lat: 8.4874, lng: -13.212, title: 'Amenity #4', animation: google.maps.Animation.BOUNCE, infoWindow: {content: '<strong>Amenity #4</strong><p><a class=h3 href="supportcenter.html">Red Cross</a></p><p>Offers Quick Emergency Services</p>'}},
-            {lat: 8.489, lng: -13.2242, title: 'Amenity #5', animation: google.maps.Animation.BOUNCE, infoWindow: {content: '<strong>Amenity #5</strong><p><a class=h3 href="supportcenter.html">Rescue Shelter</a></p><p>Offers Quick Emergency Services</p>'}},
-            {lat: 8.491, lng: -13.2124, title: 'Amenity #4', animation: google.maps.Animation.BOUNCE, infoWindow: {content: '<strong>Amenity #4</strong><p><a class=h3 href="supportcenter.html">Central Hospital</a></p><p>Offers Quick Emergency Services</p>'}},
-            {lat: 8.4812, lng: -13.2256, title: 'Amenity #5', animation: google.maps.Animation.BOUNCE, infoWindow: {content: '<strong>Amenity #5</strong><p><a class=h3 href="supportcenter.html">Rescue Center</a></p><p>Offers Quick Emergency Services</p>'}},
-            {lat: 8.487, lng: -13.213, title: 'Amenity #4', animation: google.maps.Animation.BOUNCE, infoWindow: {content: '<strong>Amenity #4</strong><p><a class=h3 href="supportcenter.html">WHO Center</a></p><p>Offers Quick Emergency Services</p>'}},
-            {lat: 8.488, lng: -13.226, title: 'Amenity #5', animation: google.maps.Animation.BOUNCE, infoWindow: {content: '<strong>Amenity #5</strong><p><a class=h3 href="supportcenter.html">RedCross</a></p><p>Offers Quick Emergency Services</p>'}},
-            {lat: 8.481, lng: -13.2612, title: 'Amenity #8', animation: google.maps.Animation.BOUNCE, infoWindow: {content: '<strong>Amenity #5</strong><p><a class=h3 href="supportcenter.html">Clinic</a></p><p>Offers Quick Emergency Services</p>'}}
-        ]).geolocate({
-            success: function(position) {
-                gmapGeolocation.setCenter(position.coords.latitude, position.coords.longitude);
-                gmapGeolocation.addMarker({
-                    lat: position.coords.latitude,
-                    lng: position.coords.longitude,
-                    animation: google.maps.Animation.BOUNCE,
-                    title: 'GeoLocation',
-                    infoWindow: {
-                        content: '<div class="text-success"><i class="fa fa-map-marker"></i> <strong>Your location!</strong></div>'
-                    }
-                });
-            },
-            error: function(error) {
-                alert('Geolocation failed: ' + error.message);
-            },
-            not_supported: function() {
-                alert("Your browser does not support geolocation");
-            },
-            always: function() {
-                // Message when geolocation succeed
-            }
         });
 
-    };
-    
+        // Indication of a sample mapping with info window giving more details which finalises the TODO indicated earlier
+        // This approach may be long but offers a better clarification.
+        var contentString = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">Freetown</h1>'+
+            '<div id="bodyContent">'+
+            '<p><b>Freetown</b>, also referred to as <b>Slavetown</b>, is a town ' +
+            'with various cultures from across Africa. </p>'+
+            '<p>Attribution: Freetown,'+
+            '</div>'+
+            '</div>';
+
+        var infowindow = new google.maps.InfoWindow({
+            content: contentString
+        });
+
+        var marker = new google.maps.Marker({
+            position: freetown,
+            map: map,
+            title: 'Freetown (Ayers Rock)'
+        });
+
+        marker.addListener('click', function() {
+            infowindow.open(map, marker);
+        });
+
+        // // Create a <script> tag and set the Amenities URL as the source.
+        // var script = document.createElement('script');
+        // // This example uses a local copy of the GeoJSON stored at
+        // // https://knowyourcity.com/
+        // script.src = 'https://knowyourcity.com/db/documentation/javascript/examples/json/amenities_GeoJSONP.js';
+        // document.getElementsByTagName('head')[0].appendChild(script);
+        //
+        // // Loop through the results array and place a marker for each
+        // // set of coordinates.
+        // window.amfeed_callback = function(results) {
+        //     for (var i = 0; i < results.features.length; i++) {
+        //         var coords = results.features[i].geometry.coordinates;
+        //         var latLng = new google.maps.LatLng(coords[1],coords[0]);
+        //         var marker = new google.maps.Marker({
+        //             position: latLng,
+        //             map: map
+        //         });
+        //     }
+        // };
+
+        // // The Google Maps Data Layer provides a container for arbitrary geospatial data (including GeoJSON).
+        // // If your data is in a file hosted on the same domain as your Maps JavaScript API application,
+        // // you can load it using the map.data.loadGeoJson() method. The file must be on the same domain,
+        // // but you can host it in a different subdomain. For example, you can make a request to files.example.com
+        // // from www.example.com.
+
+        // // This will be useful for the users who are in the Freetown Informal Settlement Areas and will
+        // // help them geolocate the mapped amenities inform of GeoJSON! I have disabled it as I am not within Freetown :)
+        // var infoWindow = new google.maps.InfoWindow({map: map});
+        //
+        // if (navigator.geolocation) {
+        //     navigator.geolocation.getCurrentPosition(function(position) {
+        //         var pos = {
+        //             lat: position.coords.latitude,
+        //             lng: position.coords.longitude
+        //         };
+        //
+        //         infoWindow.setPosition(pos);
+        //         infoWindow.setContent('<h5>You are Here, look around for location of the nearest Mapped Facility.</h5>');
+        //         map.setCenter(pos);
+        //     }, function() {
+        //         handleLocationError(true, infoWindow, map.getCenter());
+        //     });
+        // } else {
+        //     // Browser doesn't support Geolocation
+        //     handleLocationError(false, infoWindow, map.getCenter());
+        // }
+    }
+
+    function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+            'Error: The Geolocation service failed.' :
+            'Error: Your browser doesn\'t support geolocation.');
+    }
+
     return {
         init: function () {
             // Init Map
             initMap();
-
         }
     };
 }();
