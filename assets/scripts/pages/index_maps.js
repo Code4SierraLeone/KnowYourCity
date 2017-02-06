@@ -39,15 +39,25 @@ var BaseCompMaps = function() {
         var marker = new google.maps.Marker({
             position: freetown,
             map: map,
-            title: 'Freetown (Ayers Rock)'
+            animation: google.maps.Animation.DROP,
+            title: 'Freetown (Slavetown)'
         });
 
         marker.addListener('click', function() {
             infowindow.open(map, marker);
         });
 
+        // Just in case it is supported in the area to show transit layers
+        var transitLayer = new google.maps.TransitLayer();
+        transitLayer.setMap(map);
+
+        // Just in case it is supported in the area to show traffic status
         var trafficLayer = new google.maps.TrafficLayer();
         trafficLayer.setMap(map);
+
+        // Just in case it is supported in the area to show biking layers
+        var bikeLayer = new google.maps.BicyclingLayer();
+        bikeLayer.setMap(map);
 
         // // Create a <script> tag and set the Amenities URL as the source.
         // var script = document.createElement('script');
@@ -75,8 +85,8 @@ var BaseCompMaps = function() {
         // // but you can host it in a different subdomain. For example, you can make a request to files.example.com
         // // from www.example.com.
 
-        // // This will be useful for the users who are in the Freetown Informal Settlement Areas and will
-        // // help them geolocate the mapped amenities inform of GeoJSON! I have disabled it as I am not within Freetown :)
+        // This will be useful for the users who are in the Freetown Informal Settlement Areas and will
+        // help them geolocate the mapped amenities inform of GeoJSON! I have disabled it as I am not within Freetown :)
         // var infoWindow = new google.maps.InfoWindow({map: map});
         //
         // if (navigator.geolocation) {
