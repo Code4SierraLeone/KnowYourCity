@@ -40,7 +40,7 @@ var BaseCompMaps = function() {
             position: freetown,
             map: map,
             animation: google.maps.Animation.DROP,
-            title: 'Freetown (Slavetown)'
+            title: 'Freetown'
         });
 
         marker.addListener('click', function() {
