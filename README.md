@@ -2,9 +2,11 @@
 ## #KnowYourCity Campaign [Code4SierraLeone]
 =============================================
 
-**This branch mainly contains the main base of the app without the Admin management part and can be used to relatively map the data.**
 
-Know Your City Campaign aims at mapping all the Facility Infrastructures within Informal Settlement areas in Freetown, Sierra Leone, so as to help the occupants get help in the case of a disaster in the regions. The mapping will give details in terms of directions and distance from their current locations as well as the services offered in those areas.
+**This branch mainly contains the main logic of the app that handles the Administrative Management part and can be used to both map the data as well manipulate and manage the data.**
+
+Know Your City Campaign aims at mapping all the amenities within Informal Settlement areas in Freetown, Sierra Leone, so as to help the occupants get help in the case of a disaster in the regions. The mapping will give details in terms of directions and distance from their current locations as well as the services offered in those areas.
+
 
 For the User Interface Design and Logic Implementation, I have used the following resources(please refer to the documentation(`to come`) for further details on each)
 * `jQuery`
