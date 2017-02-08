@@ -16,7 +16,75 @@ var BaseCompMaps = function() {
         var map = new google.maps.Map(document.getElementById('map'),{
             zoom: 15,
             center: freetown,
-            scrollwheel: false
+            scrollwheel: false,
+            styles: [
+                {
+                    "featureType": "administrative.locality",
+                    "elementType": "geometry",
+                    "stylers": [
+                        {
+                            "visibility": "on"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "poi.business",
+                    "elementType": "all",
+                    "stylers": [
+                        {
+                            "visibility": "off"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "poi.school",
+                    "elementType": "all",
+                    "stylers": [
+                        {
+                            "visibility": "off"
+                        },
+                        {
+                            "saturation": -31
+                        }
+                    ]
+                },
+                {
+                    "featureType": "poi.government",
+                    "elementType": "all",
+                    "stylers": [
+                        {
+                            "visibility": "off"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "poi.medical",
+                    "elementType": "all",
+                    "stylers": [
+                        {
+                            "visibility": "off"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "poi.sports_complex",
+                    "elementType": "all",
+                    "stylers": [
+                        {
+                            "visibility": "off"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "poi.place_of_worship",
+                    "elementType": "all",
+                    "stylers": [
+                        {
+                            "visibility": "off"
+                        }
+                    ]
+                }
+            ]
         });
 
         // Indication of a sample mapping with info window giving more details which finalises the TODO indicated earlier
