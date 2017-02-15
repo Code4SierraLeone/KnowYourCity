@@ -28,6 +28,8 @@ For the User Interface Design and Logic Implementation, I have used the followin
 
 ## Getting your own instance of Know Your City Campaign app
 
+![alt tag](https://raw.githubusercontent.com/Code4SierraLeone/KnowYourCity/base/assets/img/photos/12.png)
+
 1. Clone this repository
 
    `$ https://github.com/Code4SierraLeone/KnowYourCity.git`
