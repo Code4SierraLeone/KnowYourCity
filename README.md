@@ -23,10 +23,12 @@ For the User Interface Design and Logic Implementation, I have used the followin
 
 ## Check it out at a glance
 
-1. Home Page
+#### Home Page
+
 ![alt tag](https://raw.githubusercontent.com/Code4SierraLeone/KnowYourCity/base/assets/img/photos/13.png)
 
-2. Web-app Page
+#### Web-app Page
+
 ![alt tag](https://raw.githubusercontent.com/Code4SierraLeone/KnowYourCity/base/assets/img/photos/12.png)
 
 ## Getting your own instance of Know Your City Campaign app
