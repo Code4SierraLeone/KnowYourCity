@@ -18,5 +18,36 @@ For the User Interface Design and Logic Implementation, I have used the followin
 
 ### Quick Instructions
 
-1. To view the current user interface designs just run the files on the `templates directory` on your local server. You can as well set up the `$GOPATH` and run the `main.go` server found here[This is under construction and will be documented by next week].
-2. The data being rendered on the User interface at the moment are dummy data, and not real especially on the Map.
+## Main Features
+* Allow users to find mapped resource centers in the Informal Settlement Areas
+* Allow users to have access to contacts to the mapped resource centers
+* Allow users to  Identify their current location on the map, thus be able to trace the mapped locations
+
+## Check it out at a glance
+
+![alt tag](https://raw.githubusercontent.com/Code4SierraLeone/KnowYourCity/base/assets/img/photos/12.png)
+
+## Getting your own instance of Know Your City Campaign app
+
+1. Clone this repository
+
+   `$ https://github.com/Code4SierraLeone/KnowYourCity.git`
+
+2. Install project dependencies via `go get`.
+
+    `$ go get`
+
+3. Run a development server from the root folder.
+
+    `$ go run app/serve.go ` (This is for current tests)
+    `$ go run app/main.go ` (This is for production stage)
+
+## Current
+* Implementation of mapping data
+
+## Milestone/Backlog
+* Fully integrate the SMS feature into the app to allow for quick notifications
+
+
+* To view the current user interface designs just run the files on the `templates directory` on your local server. You can as well set up the `$GOPATH` and run the `main.go` server found here[This is under construction and will be documented by next week].
+* The data being rendered on the User interface at the moment are dummy data, and not real especially on the Map.
