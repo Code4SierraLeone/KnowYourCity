@@ -16,8 +16,6 @@ For the User Interface Design and Logic Implementation, I have used the followin
 * `Golang` (Local server taste runs
 * `Firebase`(Authentication and Realtime Database)
 
-### Quick Instructions
-
 ## Main Features
 * Allow users to find mapped resource centers in the Informal Settlement Areas
 * Allow users to have access to contacts to the mapped resource centers
