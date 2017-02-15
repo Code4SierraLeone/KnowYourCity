@@ -1,0 +1,635 @@
+
+/* 1. IMPORT SECTION */
+
+	@import url("bootstrap.css");
+	@import url("animate.css");
+	@import url("https://fonts.googleapis.com/css?family=Roboto:400,300&subset=latin,cyrillic-ext");
+	@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
+	@import url("font-awesome.min.css");
+	@import url("magnific-popup.css");
+
+
+
+/* 2. BASIC STYLES */
+
+	html,
+	body {
+		height: 100%;
+		width: 100%;
+	}
+
+	body {
+		font-size: 16px;
+		line-height: 1.5em;
+		font-family: 'Roboto', sans-serif;
+		background-color: transparent;
+		color: #fff;
+		font-weight: 400;
+		-webkit-font-smoothing: antialiased;
+		text-rendering: optimizeLegibility;
+		overflow-x: hidden;
+		overflow-y: hidden;
+	}
+
+	a {
+		transition: color 0.25s, background 0.25s, opacity 0.25s;
+		-moz-transition: color 0.25s, background 0.25s, opacity 0.25s;
+		-webkit-transition: color 0.25s, background 0.25s, opacity 0.25s;
+		-o-transition: color 0.25s, background 0.25s, opacity 0.25s;
+		-ms-transition: color 0.25s, background 0.25s, opacity 0.25s;
+	}
+
+	a, a:hover, a:active, a:focus {
+		outline: 0;
+		border: 0;
+		text-decoration: none;
+	}
+
+	a, a:active, a:focus {
+		color: #fff;
+	}
+
+	a:hover {
+		color: #ed5565;
+	}
+
+	h2 {
+  	font-family: 'Montserrat', sans-serif;
+  	font-weight: 700;
+  	text-transform: uppercase;
+  	font-size: 1.4em;
+  	display: inline;
+  	border-bottom: 4px solid #fff;
+  	padding-bottom: 10px;
+	}
+
+	p {
+		margin-top: 40px;
+		font-size: 1.4em;
+		font-weight: 400;
+		font-style: italic;
+		line-height: 1.5em;
+	}
+
+	::-moz-selection {
+    color: #fff;
+    background: rgba(237, 85, 101, 0.2);
+	}
+
+	::selection {
+    color: #fff; 
+    background: rgba(237, 85, 101, 0.2);
+	}
+
+
+/* 3. PRELOADER */
+
+	.lj-preloader {
+		content: "";
+		width: 100%;
+		height: 100%;
+		z-index: 99;
+		display: block;
+		position: fixed;
+		text-align: center;
+		background-color: #e2e2e2;
+	}
+
+	.lj-preloader > img {
+		top: 45%;
+		width: 180px;
+		height: 50px;
+		margin: 0 auto;
+		margin-bottom: 30px;
+		position: relative;
+	}
+
+
+/* 4. NAVIGATION */
+
+	nav {
+		position: fixed;
+		top: 0;
+		left: -50px;
+		width: 50px;
+		height: 100%;
+		z-index: 5;
+		background: rgba(0, 0, 0, 0.3);
+		padding-top: 90px;
+		text-align: left;
+		overflow: hidden;
+	}
+
+	nav a {
+		display: block;
+		padding: 15px 0;
+		background-color: transparent;
+		white-space: nowrap;
+	}
+
+	nav a:hover {
+		background-color: #ed5565;
+		color: #fff;
+	}
+
+	nav a.active {
+		color: #ed5565;
+	}
+
+	nav a.active:hover {
+		color: #fff;
+	}
+
+	nav i {
+		display: inline-block;
+		width: 50px;
+		text-align: center;
+	}
+
+	nav span {
+		display: inline;
+  	font-family: 'Montserrat', sans-serif;
+  	font-weight: 400;
+	}
+
+
+/* 5. HEADER */
+
+	header {
+		width: 100%;
+		min-height: 100%;
+		margin-bottom: -100px;
+		position: relative;
+		top: 100%;
+		padding-left: 50px;
+	}
+	
+	header > .container {
+		height: 100%;
+		padding: 100px 20px 150px;
+		position: relative;
+		z-index: 1;
+	}
+
+	header > canvas {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	.lj-background {
+		height: 100vh;
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -99;
+	}
+	
+	.lj-overlay {
+		width: 100%;
+		height: 100%;		
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: -1;
+	}
+
+	.lj-overlay-image {
+		background-image: url('../../assets/img/dots.png');
+		background-repeat: repeat;
+	}
+	
+	.lj-overlay-color {
+    background-color: rgba(0,0,0,0.3);
+	}
+	
+	.lj-overlay-gradient {
+		background: -moz-linear-gradient(215deg,  rgba(0,204,255,0.8) 0%, rgba(196,255,0,0.8) 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(0,204,255,0.8)), color-stop(100%,rgba(196,255,0,0.8))); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(215deg,  rgba(0,204,255,0.8) 0%,rgba(196,255,0,0.8) 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(215deg,  rgba(0,204,255,0.8) 0%,rgba(196,255,0,0.8) 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(215deg,  rgba(0,204,255,0.8) 0%,rgba(196,255,0,0.8) 100%); /* IE10+ */
+		background: linear-gradient(215deg,  rgba(0,204,255,0.8) 0%,rgba(196,255,0,0.8) 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ccff', endColorstr='#c4ff00',GradientType=1 ) progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../assets/img/1x1.png'); /* IE6-9 fallback on horizontal gradient */
+		pointer-events:none;
+	}
+
+
+/* 6. LOGO */
+
+	.lj-logo {
+		text-align: left;
+		z-index: 3;
+	}
+	
+	.lj-logo img {
+		width: 150px;
+		height: 40px;
+		display: inline-block;
+		margin-bottom: 50px;
+	  vertical-align: bottom;
+	}
+
+
+/* 7. SOCIALS */
+
+	.lj-socials {
+		text-align: right;
+		margin-bottom: 50px;
+		z-index: 3;
+	}
+
+	.lj-socials ul {
+		margin-top: 0;
+		margin-bottom: 0;
+		padding-left: 0;
+		list-style-type: none;
+	}
+
+	.lj-socials li {
+		display: inline-block;
+		margin-right: 5px;
+	}
+
+	.lj-socials li:last-child {
+		margin-right: 0;
+	}
+
+	.lj-socials li a {
+		width: 40px;
+		height: 40px;
+		display: inline-block;
+		line-height: 40px;
+		text-align: center;
+		background-color: transparent;
+		font-size: 1.25em;
+	}
+
+	.lj-socials li a:hover {
+		background-color: #ed5565;
+		color: #fff;
+	}
+
+	.lj-socials li {
+		overflow: hidden;
+	}
+
+
+/* 8. CONTENT */
+
+	.lj-changer {
+		margin-top: 30px;
+	}
+
+	.lj-changer > div {
+		display: none;
+		position: relative;
+	}
+
+	.lj-changer > div.active {
+		display: block;
+	}
+
+
+/* 9. HOME */
+
+	#home .lj-title {
+    z-index: 2;
+  }
+    
+  #home .lj-title > div {
+  	font-family: 'Montserrat', sans-serif;
+  	font-weight: 400;
+  	font-size: 4em;
+    word-wrap: break-word;
+    line-height: 1em;
+    display: inline-block;
+  }
+
+  #home .lj-title .rotate {
+  	display: inline-block;
+  }
+  
+  #home .lj-title span {
+    color: #ed5565;
+  }
+
+  #home .lj-title-paragraph {
+  	max-width: 600px;
+  }
+
+  #home .lj-title-paragraph p {
+  	font-size: 1.4em;
+  	font-style: italic;
+  }
+
+
+/* 10. FEATURES */
+
+	#features ul {
+		margin-top: 30px;
+		border-left: 2px solid #ed5565;
+		list-style-type: none;
+	}
+
+	#features li {
+		padding: 10px 0;
+		position: relative;
+		font-size: 1.4em;
+		font-style: normal;
+		font-weight: 400;
+	}
+
+	#features li:first-child {
+		padding-top: 0;
+	}
+
+	#features li:last-child {
+		padding-bottom: 0;
+	}
+
+	#features li p {
+		font-size: 0.7em;
+		font-weight: 300;
+		font-style: italic;
+		margin: 20px 0 0 20px;
+	}
+
+	#features i {
+		margin: 30px 15px 0 0;
+		opacity: 0.2;
+	}
+
+/* 12. TEAM */
+
+	#team img {
+		display: block;
+		margin-top: 30px;
+		width: 100%;
+		border: 4px solid #fff;
+		-webkit-box-shadow: 0px 0px 80px 5px rgba(0,0,0,1);
+		-moz-box-shadow: 0px 0px 80px 5px rgba(0,0,0,1);
+		box-shadow: 0px 0px 80px 5px rgba(0,0,0,1);
+	}
+
+	#team figure {
+		display: inline-block;
+		margin-right: 30px;
+	}
+
+	#team figcaption {
+  	font-family: 'Montserrat', sans-serif;
+  	font-weight: 700;
+  	font-size: 1.4em;
+  	margin-top: 10px;
+  	position: relative;
+	}
+
+	#team figcaption span {
+		display: block;
+		font-style: italic;
+		font-family: 'Roboto', sans-serif;
+		font-weight: 300;
+		font-size: 0.7em;
+		color: #ed5565;
+	}
+
+	#team .team-socials {
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+
+	#team .team-socials a {
+		margin-left: 10px;
+		opacity: 0.2;
+	}
+
+	#team .team-socials a:hover {
+		opacity: 1;
+		color: #fff;
+	}
+
+
+/* 13. CONTACT */
+
+	#contact form {
+		margin-top: 30px;
+	}
+
+	#contact input,
+	#contact textarea {
+		font-weight: 300;
+		line-height: 1.4em;
+		display: block;
+		background-color: rgba(25, 25, 25, 0.3);
+		border: 0;
+		outline: 0;
+		border-left: 2px solid #ed5565;
+		width: 100%;
+		padding: 10px;
+		-webkit-box-shadow: 0px 0px 80px 5px rgba(0,0,0,0.6);
+		-moz-box-shadow: 0px 0px 80px 5px rgba(0,0,0,0.6);
+		box-shadow: 0px 0px 80px 5px rgba(0,0,0,0.6);
+	}
+
+	#contact textarea {
+		min-height: 200px;
+		resize: none;
+	}
+
+	#contact button {
+		margin-top: 30px;
+		background: transparent;
+		padding: 0;
+		border: 0;
+		outline: 0;
+  	font-family: 'Montserrat', sans-serif;
+  	font-weight: 700;
+  	font-size: 1.4em;
+  	font-style: italic;
+		transition: color 0.25s ease-in-out 0s;
+		-moz-transition: color 0.25s ease-in-out 0s;
+		-webkit-transition: color 0.25s ease-in-out 0s;
+		-o-transition: color 0.25s ease-in-out 0s;
+		-ms-transition: color 0.25s ease-in-out 0s;
+	}
+
+	#contact button:hover {
+		color: #ed5565;
+	}
+
+	#contact label {
+		display: inline-block;
+		height: 40px;
+		position: relative;
+		padding: 10px;
+		bottom: -39px;
+		font-weight: 300;
+		color: rgba(255, 255, 255, 1);
+		cursor: text;
+		transition: all 0.25s ease-in-out 0s;
+		-moz-transition: all 0.25s ease-in-out 0s;
+		-webkit-transition: all 0.25s ease-in-out 0s;
+		-o-transition: all 0.25s ease-in-out 0s;
+		-ms-transition: all 0.25s ease-in-out 0s;
+	}
+
+	#contact label.active {
+		color: rgba(255, 255, 255, 0.5);
+		font-size: 0.8em;
+		bottom: 0;
+		cursor: default;
+	}
+
+	#contact label span {
+		padding-left: 20px;
+	}
+
+	#contact label i.fa-check {
+		color: #2ecc71;
+	}
+
+	#contact label i.fa-close {
+		color: #ed5565;
+	}
+
+	#contact span.contact-message {
+		display: none;
+		position: relative;
+		left: 30px;
+		opacity: 0;
+		margin-top: 10px;
+		color: #2ecc71;
+		font-size: 0.8em;
+		font-weight: 300;
+	}
+	    
+/* 14. FOOTER */
+
+	footer {
+		width: 100%;
+		padding-left: 50px;
+		position: relative;
+		z-index: 1;
+	}
+
+	footer > .container {
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+
+  .lj-progress {
+  	height: 40px;
+  	padding-top: 19px;
+  }
+
+  .lj-progress .lj-progress-bar {
+  	display: block;
+  	width: 100%;
+  	height: 5px;
+  	background: rgba(255, 255, 255, 0.15);
+  }
+
+  .lj-progress .filler {
+  	background: #ed5565;
+  	display: block;
+  	height: 5px;
+  }
+
+  .lj-progress span {
+  	font-weight: 300;
+  	font-size: 1em;
+  	top: -10px;
+  	position: absolute;
+  	display: inline-block;
+  }
+
+  .lj-progress span em {
+  	font-size: 1.4em;
+  	font-weight: 300;
+  	padding-left: 10px;
+  }
+
+	.lj-footer-copyrights p {
+		line-height: 40px;
+		margin: 0;
+		text-align: right;
+		font-size: 0.8em;
+		font-weight: 300;
+		font-style: normal;
+	}
+
+
+/* 15. BREAKPOINTS */
+
+	@media (max-width: 1199px) {
+		#gallery .grid-item {
+			width: 290px;
+		}
+	}
+
+	@media (max-width: 991px) {
+		#gallery .grid-item {
+			width: 340px;
+		}
+	}
+
+	@media (max-width: 767px) {
+
+		p {
+			font-size: 1.2em;
+		}
+
+		nav {
+			padding-top: 40px;
+		}
+
+		header {
+			margin-bottom: -140px;
+		}
+
+		header > .container {
+			padding-top: 50px;
+		}
+
+		.lj-logo {
+			text-align: center;
+		}
+
+		.lj-socials {
+			text-align: center;
+		}
+
+		#home .lj-title > div {
+			font-size: 3em;
+			margin-top: 0;
+		}
+
+		#home .lj-title-paragraph p {
+			font-size: 1.2em
+		}
+
+		#features li {
+			font-size: 1.2em;
+		}
+
+		#features li p {
+			font-size: 0.8em;
+		}
+
+		#gallery .grid-item {
+			width: 100%;
+		}
+
+		#team figure {
+			margin-right: 0;
+			margin-bottom: 30px;
+		}
+
+		.lj-footer-copyrights p {
+			text-align: center;
+		}
+
+	}
