@@ -1,5 +1,4 @@
-=============================================
-## #KnowYourCity Campaign [Code4SierraLeone]
+## KnowYourCity Campaign [Code4SierraLeone]
 =============================================
 
 
