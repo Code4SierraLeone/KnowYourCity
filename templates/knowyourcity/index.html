@@ -1,223 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
-    <title>Know Your City</title>
+  <title>Know Your City</title>
 
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="../../assets/img/favicons/favicon.png">
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="../../assets/img/favicons/favicon.png">
 
-    <!-- Main CSS file -->
-    <link rel="stylesheet" href="../../assets/css/style.css">
+  <!-- Main CSS file -->
+  <link rel="stylesheet" href="../../assets/css/style.css">
 
-    <!--[if lt IE 9]>
-      <script src="../../assets/scripts/html5shiv.js"></script>
-      <script src="../../assets/scripts/respond.min.js"></script>
-    <![endif]-->
+  <!--[if lt IE 9]>
+  <script src="../../assets/scripts/html5shiv.js"></script>
+  <script src="../../assets/scripts/respond.min.js"></script>
+  <![endif]-->
 
-  </head>
-  <body>
+</head>
+<body>
 
-  <!-- PRELOADER -->
-  <div class="lj-preloader">
-    <img src="../../assets/img/preloader.svg" class="progress" alt="">
+<!-- HEADER -->
+<header>
+
+  <!-- HEADER OVERLAY -->
+  <div class="lj-overlay lj-overlay-color"></div>
+  <!-- /HEADER OVERLAY -->
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="#home" class="active"><i class="fa fa-bookmark"></i><span>Home</span></a>
+    <a href="#features"><i class="fa fa-diamond"></i><span>Features</span></a>
+    <a href="#contact"><i class="fa fa-envelope"></i><span>Contact</span></a>
+  </nav>
+  <!-- /NAVIGATION -->
+
+  <div class="container">
+
+    <div class="row">
+
+      <!-- SOCIALS -->
+      <div class="col-sm-6 col-sm-push-6 lj-socials">
+        <ul>
+          <li><a class="fa fa-facebook" href="#!"></a></li>
+          <li><a class="fa fa-twitter" href="#!"></a></li>
+          <li><a class="fa fa-google-plus" href="#!"></a></li>
+          <li><a class="fa fa-github" href="https://github.com/Code4SierraLeone/KnowYourCity" target="_blank"></a></li>
+        </ul>
+      </div>
+      <!-- /SOCIALS -->
+
+      <!-- LOGO -->
+      <div class="col-sm-3 col-sm-pull-6 lj-title">
+        <a class="h1 text-white" href="index.html">
+          <span>Kn</span><i class="fa fa-circle-o-notch text-primary"></i><span class="h1 font-w600 sidebar-mini-hide">w Your City</span>
+        </a>
+      </div>
+      <!-- /LOGO -->
+
+    </div>
+
+    <!-- CHANGER -->
+    <div class="lj-changer">
+
+      <!-- PAGE #HOME -->
+      <div id="home" class="active">
+
+        <!-- TITLE -->
+        <div class="row">
+          <div class="col-xs-12 lj-title">
+            <div>Find
+              <div class="rotate"><ul class="texts">
+                <li>hospitals</li>
+                <li>food centers</li>
+                <li>shelter</li>
+                <li>redcross</li>
+              </ul></div></div>
+          </div>
+        </div>
+        <!-- /TITLE -->
+
+        <!-- TEXT PARAGRAPH -->
+        <div class="row">
+          <div class="col-xs-12 lj-title-paragraph">
+            <p>An open source web-based platform which aims to map the infrastructure facilities present in the informal settlements in Freetown!</p>
+          </div>
+        </div>
+
+        <div>
+          <h2><a href="home.html">Discover</a></h2>
+        </div>
+
+
+        <!-- /TEXT PARAGRAPH -->
+
+      </div>
+      <!-- /PAGE #HOME -->
+
+      <!-- PAGE #FEATURES -->
+      <div id="features" class="subpage">
+        <div class="row">
+          <div class="col-sm-6">
+
+            <!-- TITLE -->
+            <h2>Features</h2>
+            <!-- /TITLE -->
+
+            <!-- TEXT PARAGRAPH -->
+            <p>KnowYourCity Campaign aims at mapping all the amenities within Informal Settlement areas in Freetown, Sierra Leone,.</p>
+            <!-- TEXT PARAGRAPH -->
+
+            <!-- FEATURES LIST -->
+            <ul>
+              <li>
+                <span>Mapped Amenities</span>
+                <p>Allow users to find mapped resource centers in the Informal Settlement Areas!</p>
+              </li>
+              <li>
+                <span>Unique &amp Accurate</span>
+                <p>Allow users to Identify their current location on the map, thus be able to trace the mapped locations.</p>
+              </li>
+              <li>
+                <span>Fast &amp Reliable</span>
+                <p>Perfection in every aspect. We've spend extra time making sure every part of KnowYourCity App works and looks as expected.</p>
+              </li>
+            </ul>
+            <!-- /FEATURES LIST -->
+
+          </div>
+        </div>
+      </div>
+      <!-- /PAGE #FEATURES -->
+
+      <!-- PAGE #CONTACT -->
+      <div id="contact" class="subpage">
+        <div class="row">
+          <div class="col-sm-8 col-md-6">
+
+            <!-- TITLE -->
+            <h2>Contact</h2>
+            <!-- /TITLE -->
+
+            <!-- TEXT PARAGRAPH -->
+            <p>Don’t hesitate to ask, we are here to help you!</p>
+            <!-- /TEXT PARAGRAPH -->
+
+            <!-- CONTACT FORM -->
+            <form autocomplete="off">
+              <label for="contact-name">Name<span class="verification"></span></label>
+              <input type="text" value="" name="contact-name" id="contact-name">
+              <label for="contact-email">Email<span class="verification"></span></label>
+              <input type="text" value="" name="contact-email" id="contact-email">
+              <label for="contact-message">Message<span class="verification"></span></label>
+              <textarea name="contact-message" id="contact-message"></textarea>
+              <button type="submit" name="contact-submit">Submit</button>
+              <span class="contact-message">Submit successful, thanks!</span>
+            </form>
+            <!-- /CONTACT FORM -->
+
+          </div>
+        </div>
+      </div>
+      <!-- /PAGE #CONTACT -->
+
+    </div>
+    <!-- /CHANGER -->
+
   </div>
-  <!-- /PRELOADER -->
 
-  <!-- HEADER -->
-  <header>
+  <!-- BACKGROUND -->
+  <div class="lj-background"></div>
+  <!-- /BACKGROUND -->
 
-    <!-- HEADER OVERLAY -->
-    <div class="lj-overlay lj-overlay-color"></div>
-    <!-- /HEADER OVERLAY -->
+</header>
+<!-- /HEADER -->
 
-    <!-- NAVIGATION -->
-    <nav>
-      <a href="#home" class="active"><i class="fa fa-bookmark"></i><span>Home</span></a>
-      <a href="#features"><i class="fa fa-diamond"></i><span>Features</span></a>
-      <a href="#contact"><i class="fa fa-envelope"></i><span>Contact</span></a>
-    </nav>
-    <!-- /NAVIGATION -->
+<!-- FOOTER -->
+<footer>
 
-    <div class="container">
+  <div class="container">
+    <div class="row">
 
-      <div class="row">
-
-        <!-- SOCIALS -->
-        <div class="col-sm-6 col-sm-push-6 lj-socials">
-          <ul>
-            <li><a class="fa fa-facebook" href="#!"></a></li>
-            <li><a class="fa fa-twitter" href="#!"></a></li>
-            <li><a class="fa fa-google-plus" href="#!"></a></li>
-            <li><a class="fa fa-github" href="#!"></a></li>
-          </ul>
-        </div>
-        <!-- /SOCIALS -->
-
-        <!-- LOGO -->
-        <div class="col-sm-3 col-sm-pull-6 lj-title">
-          <a class="h1 text-white" href="index.html">
-            <span>Kn</span><i class="fa fa-circle-o-notch text-primary"></i><span class="h1 font-w600 sidebar-mini-hide">w Your City</span>
-          </a>
-        </div>
-        <!-- /LOGO -->
-
+      <!-- FOOTER COPYRIGHTS -->
+      <div class="col-sm-3 lj-footer-copyrights">
+        <p>&copy; All rights reserved. <a href="#" target="_blank">KnowYourCity 2017</a></p>
       </div>
-      
-      <!-- CHANGER -->
-      <div class="lj-changer">
-
-        <!-- PAGE #HOME -->
-        <div id="home" class="active">
-
-          <!-- TITLE -->
-          <div class="row">
-            <div class="col-xs-12 lj-title">
-              <div>Find
-                <div class="rotate"><ul class="texts">
-                  <li>hospitals</li>
-                  <li>food centers</li>
-                  <li>shelter</li>
-                  <li>redcross</li>
-                </ul></div></div>
-            </div>
-          </div>
-          <!-- /TITLE -->
-
-          <!-- TEXT PARAGRAPH -->
-          <div class="row">
-            <div class="col-xs-12 lj-title-paragraph">
-              <p>An open source web-based platform which aims to map the infrastructure facilities present in the informal settlements in Freetown!</p>
-            </div>
-          </div>
-
-          <div>
-            <h2><a href="home.html">Discover</a></h2>
-          </div>
-
-
-          <!-- /TEXT PARAGRAPH -->
-
-        </div>
-        <!-- /PAGE #HOME -->
-
-        <!-- PAGE #FEATURES -->
-        <div id="features" class="subpage">
-          <div class="row">
-            <div class="col-sm-6">
-
-              <!-- TITLE -->
-              <h2>Features</h2>
-              <!-- /TITLE -->
-
-              <!-- TEXT PARAGRAPH -->
-              <p>KnowYourCity Campaign aims at mapping all the amenities within Informal Settlement areas in Freetown, Sierra Leone,.</p>
-              <!-- TEXT PARAGRAPH -->
-
-              <!-- FEATURES LIST -->
-              <ul>
-                <li>
-                  <span>Mapped Amenities</span>
-                  <p>Allow users to find mapped resource centers in the Informal Settlement Areas!</p>
-                </li>
-                <li>
-                  <span>Unique design</span>
-                  <p>Allow users to Identify their current location on the map, thus be able to trace the mapped locations.</p>
-                </li>
-                <li>
-                  <span>Fast and reliable</span>
-                  <p>Perfection in every aspect. We've spend extra time making sure every part of KnowYourCityFp works and looks as expected.</p>
-                </li>
-              </ul>
-              <!-- /FEATURES LIST -->
-
-            </div>
-          </div>
-        </div>
-        <!-- /PAGE #FEATURES -->
-
-        <!-- PAGE #CONTACT -->
-        <div id="contact" class="subpage">
-          <div class="row">
-            <div class="col-sm-8 col-md-6">
-
-              <!-- TITLE -->
-              <h2>Contact</h2>
-              <!-- /TITLE -->
-
-              <!-- TEXT PARAGRAPH -->
-              <p>Don’t hesitate to ask, we are here to help you!</p>
-              <!-- /TEXT PARAGRAPH -->
-
-              <!-- CONTACT FORM -->
-              <form autocomplete="off">
-                <label for="contact-name">Name<span class="verification"></span></label>
-                <input type="text" value="" name="contact-name" id="contact-name">
-                <label for="contact-email">Email<span class="verification"></span></label>
-                <input type="text" value="" name="contact-email" id="contact-email">
-                <label for="contact-message">Message<span class="verification"></span></label>
-                <textarea name="contact-message" id="contact-message"></textarea>
-                <button type="submit" name="contact-submit">Submit</button>
-                <span class="contact-message">Submit successful, thanks!</span>
-              </form>
-              <!-- /CONTACT FORM -->
-
-            </div>
-          </div>
-        </div>
-        <!-- /PAGE #CONTACT -->
-
-      </div>
-      <!-- /CHANGER -->
+      <!-- /FOOTER COPYRIGHTS -->
 
     </div>
+  </div>
 
-    <!-- BACKGROUND -->
-    <div class="lj-background"></div>
-    <!-- /BACKGROUND -->
-  
-  </header>
-  <!-- /HEADER -->
+</footer>
+<!-- /FOOTER -->
 
-  <!-- FOOTER -->
-  <footer>
-
-    <div class="container">
-      <div class="row">
-        
-        <!-- FOOTER COPYRIGHTS -->
-        <div class="col-sm-3 lj-footer-copyrights">
-          <p>&copy; All rights reserved. <a href="#" target="_blank">KnowYourCity 2017</a></p>
-        </div>
-        <!-- /FOOTER COPYRIGHTS -->
-
-      </div>
-    </div>
-
-  </footer>
-  <!-- /FOOTER -->
-  
-  <!-- jQuery -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <!-- Backstretch -->
-  <script src="../../assets/scripts/jquery.backstretch.min.js"></script>
-  <!-- Masonry -->
-  <script src="../../assets/scripts/masonry.min.js"></script>
-  <!-- Magnific Popup -->
-  <script src="../../assets/scripts/jquery.magnific-popup.min.js"></script>
-  <!-- jQuery Easings -->
-  <script src="../../assets/scripts/jquery.easing.1.3.js"></script>
-  <!-- Retinadisplay -->
-  <script src="../../assets/scripts/retinadisplay.js"></script>
-  <!-- Velocity js -->
-  <script src="../../assets/scripts/velocity.min.js"></script>
-  <!-- Lettering -->
-  <script src="../../assets/scripts/jquery.lettering.js"></script>
-  <!-- Textillate -->
-  <script src="../../assets/scripts/jquery.textillate.js"></script>
-  <!-- Coffee Break js scripts -->
-  <script src="../../assets/scripts/lj-coffee-break.js"></script>
-  </body>
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<!-- Backstretch -->
+<script src="../../assets/scripts/jquery.backstretch.min.js"></script>
+<!-- Masonry -->
+<script src="../../assets/scripts/masonry.min.js"></script>
+<!-- Magnific Popup -->
+<script src="../../assets/scripts/jquery.magnific-popup.min.js"></script>
+<!-- jQuery Easings -->
+<script src="../../assets/scripts/jquery.easing.1.3.js"></script>
+<!-- Retinadisplay -->
+<script src="../../assets/scripts/retinadisplay.js"></script>
+<!-- Velocity js -->
+<script src="../../assets/scripts/velocity.min.js"></script>
+<!-- Lettering -->
+<script src="../../assets/scripts/jquery.lettering.js"></script>
+<!-- Textillate -->
+<script src="../../assets/scripts/jquery.textillate.js"></script>
+<!-- Coffee Break js scripts -->
+<script src="../../assets/scripts/lj-coffee-break.js"></script>
+</body>
 </html>
