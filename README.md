@@ -46,7 +46,10 @@ For the User Interface Design and Logic Implementation, I have used the followin
     `$ go run app/main.go ` (This is for production stage)
 
 ## Current
-* Implementation of mapping data
+* Collection and Implementation of data mapping.
+
+## Issues
+* Broken side-menu on the web-app page. Working to fix this ASAP
 
 ## Milestone/Backlog
 * Fully integrate the SMS feature into the app to allow for quick notifications
