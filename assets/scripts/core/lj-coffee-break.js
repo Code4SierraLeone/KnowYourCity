@@ -1,8 +1,5 @@
 /*
-  Author: Lumberjacks
-  Template: Coffee Break (Coming Soon)
-  Version: 1.0
-  URL: http://themeforest.net/user/Lumberjacks/
+*
 */
 
 "use strict";
@@ -11,7 +8,7 @@
 
 
     // Backstretch
-    $(".lj-background").backstretch("../../assets/img/bg.jpg");
+    $(".lj-background").backstretch("../../assets/img/photos/bg.jpg");
 
     // Text rotator
     $('.rotate').textillate({ 
