@@ -126,7 +126,7 @@ For the User Interface Design and Logic Implementation, I have used the followin
 
 ## Did You Know...
 
-#### Its mobile device ready? Yes it is.
+#### That KnowYourCity Campaign App is smartphone friendly? Find out here..
 
 ![alt tag](https://raw.githubusercontent.com/Code4SierraLeone/KnowYourCity/base/assets/img/photos/11.png)
 
