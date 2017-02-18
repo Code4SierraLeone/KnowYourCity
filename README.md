@@ -128,3 +128,5 @@ For the User Interface Design and Logic Implementation, I have used the followin
 
 #### Its mobile device ready? Yes it is.
 
+![alt tag](https://raw.githubusercontent.com/Code4SierraLeone/KnowYourCity/base/assets/img/photos/11.png)
+
