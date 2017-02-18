@@ -123,3 +123,8 @@ For the User Interface Design and Logic Implementation, I have used the followin
 
 * To view the current user interface designs just run the files on the `templates directory` on your local server. You can as well set up the `$GOPATH` and run the `main.go` server found here[This is under construction and will be documented by next week].
 * The data being rendered on the User interface at the moment are dummy data, and not real especially on the Map.
+
+## Did You Know...
+
+#### Its mobile device ready? Yes it is.
+
