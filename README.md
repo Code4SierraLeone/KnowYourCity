@@ -49,7 +49,7 @@ For the User Interface Design and Logic Implementation, I have used the followin
 * Collection and Implementation of data mapping.
 
 ## Issues
-* Broken side-menu on the web-app page. Working to fix this ASAP
+* Broken side-menu on the web-app page. Working to fix this ASAP [FIXED]
 
 ## Milestone/Backlog
 * Fully integrate the SMS feature into the app to allow for quick notifications

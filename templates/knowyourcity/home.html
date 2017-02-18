@@ -40,7 +40,7 @@
 
         <!-- Bootstrap and KnowYourCity CSS framework -->
         <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
-        <link rel="stylesheet" id="css-main" href="../../assets/css/kyc.min.css">
+        <link rel="stylesheet" id="css-main" href="../../assets/css/kyc.css">
 
         <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
         <link rel="stylesheet" id="css-theme" href="../../assets/css/themes/city.min.css">
@@ -67,47 +67,6 @@
             'header-navbar-fixed'        Enables fixed header
         -->
         <div id="page-container" class="sidebar-l sidebar-o side-scroll header-navbar-fixed">
-            <!-- Side Overlay-->
-            <aside id="side-overlay">
-                <!-- Side Overlay Scroll Container -->
-                <div id="side-overlay-scroll">
-                    <!-- Side Header -->
-                    <div class="side-header side-content">
-                        <!-- Layout API, functionality initialized in App() -> uiLayoutApi() -->
-                        <button class="btn btn-default pull-right" type="button" data-toggle="layout" data-action="side_overlay_close">
-                            <i class="fa fa-times"></i>
-                        </button>
-                        <span class="font-w600 push-10-l">Admin</span>
-                    </div>
-                    <!-- END Side Header -->
-
-                    <!-- Side Content -->
-                    <div class="side-content remove-padding-t">
-                        <!-- Block -->
-                        <div class="block pull-r-l">
-                            <div class="block-header bg-gray-lighter">
-                                <ul class="block-options">
-                                    <li>
-                                        <button type="button" data-toggle="block-option" data-action="refresh_toggle" data-action-mode="demo"><i class="si si-refresh"></i></button>
-                                    </li>
-                                    <li>
-                                        <button type="button" data-toggle="block-option" data-action="content_toggle"></button>
-                                    </li>
-                                </ul>
-                                <h3 class="block-title">Block</h3>
-                            </div>
-                            <div class="block-content">
-                                <p>...</p>
-                            </div>
-                        </div>
-                        <!-- END Block -->
-                    </div>
-                    <!-- END Side Content -->
-                </div>
-                <!-- END Side Overlay Scroll Container -->
-            </aside>
-            <!-- END Side Overlay -->
-
             <!-- Sidebar -->
             <nav id="sidebar">
                 <!-- Sidebar Scroll Container -->
@@ -121,7 +80,6 @@
                             <button class="btn btn-link text-gray pull-right hidden-md hidden-lg" type="button" data-toggle="layout" data-action="sidebar_close">
                                 <i class="fa fa-times"></i>
                             </button>
-                            <!-- Themes functionality initialized in App() -> uiHandleTheme() -->
                             <a class="h5 text-white" href="index.html">
                                 <span>Kn</span><i class="fa fa-circle-o-notch text-primary"></i><span class="h5 font-w600 sidebar-mini-hide">w Your City</span>
                             </a>
@@ -132,7 +90,7 @@
                         <div class="side-content">
                             <ul class="nav-main">
                                 <li>
-                                    <a class="active" href="index.html"><i class="si si-map"></i><span class="sidebar-mini-hide">Home</span></a>
+                                    <a class="active" href="home.html"><i class="si si-map"></i><span class="sidebar-mini-hide">Home</span></a>
                                 </li>
                                 <li>
                                     <a class="submenu" href="supportcenter.html"><i class="si si-support"></i><span class="sidebar-mini-hide">Support Center</span></a>
@@ -196,6 +154,12 @@
                             <i class="fa fa-ellipsis-v"></i>
                         </button>
                     </li>
+                    <li>
+                        <!-- Opens the Apps modal found at the bottom of the page, before including JS code -->
+                        <button class="btn btn-default pull-right" data-toggle="modal" data-target="#apps-modal" type="button">
+                            <i class="si si-grid"></i>
+                        </button>
+                    </li>
                     <li class="visible-xs">
                         <!-- Toggle class helper (for .js-header-search below), functionality initialized in App() -> uiToggleClass() -->
                         <button class="btn btn-default" data-toggle="class-toggle" data-target=".js-header-search" data-class="header-search-xs-visible" type="button">
@@ -203,7 +167,7 @@
                         </button>
                     </li>
                     <li class="js-header-search header-search">
-                        <form class="form-horizontal" action="start_backend.html" method="post">
+                        <form class="form-horizontal" action="base_pages_search.html" method="post">
                             <div class="form-material form-material-primary input-group remove-margin-t remove-margin-b">
                                 <input class="form-control" type="text" id="base-material-text" name="base-material-text" placeholder="Search..">
                                 <span class="input-group-addon"><i class="si si-magnifier"></i></span>
@@ -359,9 +323,15 @@
         <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
 
         <!-- KnowYourCity Core JS: jQuery, Bootstrap, slimScroll, scrollLock, Appear, CountTo, Placeholder, Cookie and App.js -->
-        <script src="../../assets/scripts/kyc.min.js"></script>
-        <script src="../../assets/scripts/pages/index_maps.js"></script>
+ -->        <script src="../../assets/scripts/pages/index_maps.js"></script>
 
         <!-- Page JS Plugins + Page JS Code -->
+
+        <script>
+            jQuery(function () {
+                // Init page helpers (CountTo plugin)
+                App.initHelpers('appear-countTo');
+            });
+        </script>
     </body>
 </html>
