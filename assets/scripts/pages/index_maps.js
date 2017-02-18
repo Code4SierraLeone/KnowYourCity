@@ -7,6 +7,22 @@
 var BaseCompMaps = function() {
     // Gmaps.js, for more examples you can check out https://hpneo.github.io/gmaps/
 
+    function CoordMapType(tileSize) {
+        this.tileSize = tileSize;
+      }
+
+      CoordMapType.prototype.getTile = function(coord, zoom, ownerDocument) {
+        var div = ownerDocument.createElement('div');
+        div.innerHTML = coord;
+        div.style.width = this.tileSize.width + 'px';
+        div.style.height = this.tileSize.height + 'px';
+        div.style.fontSize = '10';
+        div.style.borderStyle = 'solid';
+        div.style.borderWidth = '1px';
+        div.style.borderColor = '#AAAAAA';
+        return div;
+      };
+
     // Init Regular Map on the index.html page
     function initMap() {
 
@@ -112,6 +128,27 @@ var BaseCompMaps = function() {
             icon: icons[feature.type].icon,
             map: map
           });
+        }
+        // Places search, for future, Please google, do something
+        function callback(results, status) {
+            if (status === google.maps.places.PlacesServiceStatus.OK) {
+              for (var i = 0; i < results.length; i++) {
+                createMarker(results[i]);
+              }
+            }
+        }
+
+        function createMarker(place) {
+            var placeLoc = place.geometry.location;
+            var marker = new google.maps.Marker({
+              map: map,
+              position: place.geometry.location
+            });
+
+            google.maps.event.addListener(marker, 'click', function() {
+              infowindow.setContent(place.name);
+              infowindow.open(map, this);
+            });
         }
 
         var features = [
@@ -252,6 +289,7 @@ var BaseCompMaps = function() {
         // The map() method here has nothing to do with the Google Maps API.
         var markers = locations.map(function(location, i) {
           return new google.maps.Marker({
+            animation: google.maps.Animation.DROP,
             position: location,
             label: labels[i % labels.length]
           });
@@ -337,7 +375,26 @@ var BaseCompMaps = function() {
         //     // Browser doesn't support Geolocation
         //     handleLocationError(false, infoWindow, map.getCenter());
         // }
+
+
+        // Insert this overlay map type as the first overlay map type at
+        // position 0. Note that all overlay map types appear on top of
+        // their parent base map.
+
+        infowindow = new google.maps.InfoWindow();
+        var service = new google.maps.places.PlacesService(map);
+        service.nearbySearch({
+          location: freetown,
+          animation: google.maps.Animation.DROP,
+          radius: 11000,
+          type: ['hospital']
+        }, callback);
+        
+        map.overlayMapTypes.insertAt(
+            0, new CoordMapType(new google.maps.Size(256, 256)));
     }
+
+    
     
 
     function handleLocationError(browserHasGeolocation, infoWindow, pos) {
