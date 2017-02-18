@@ -45,10 +45,76 @@ For the User Interface Design and Logic Implementation, I have used the followin
     `$ go run app/serve.go ` (This is for current tests)
     `$ go run app/main.go ` (This is for production stage)
 
-## Current
+## Data Mapping
 * Collection and Implementation of data mapping.
+* Included in the package is the Google Places Api which I am using to search for all the hospitals within a radius of 11000, this shows and maps any health center within that radius. Which is an amazing way of identifying amenities around the user. Thank you Google Places.
+
+```javascript
+	map = new google.maps.Map(document.getElementById('map'), {
+	          center: freetown,
+	          zoom: 14
+	        });
+
+	        infowindow = new google.maps.InfoWindow();
+	        var service = new google.maps.places.PlacesService(map);
+	        service.nearbySearch({
+	          location: freetown,
+	          radius: 11000,
+	          type: ['store']
+	        }, callback);
+	      }
+
+	      function callback(results, status) {
+	        if (status === google.maps.places.PlacesServiceStatus.OK) {
+	          for (var i = 0; i < results.length; i++) {
+	            createMarker(results[i]);
+	          }
+	        }
+	      }
+
+	      function createMarker(place) {
+	        var placeLoc = place.geometry.location;
+	        var marker = new google.maps.Marker({
+	          map: map,
+	          position: place.geometry.location
+	        });
+
+	        google.maps.event.addListener(marker, 'click', function() {
+	          infowindow.setContent(place.name);
+	          infowindow.open(map, this);
+	        });
+```
+
+* To avoid data crowding, I have decided to use the marker clustering tool, which allows me to group the markers and as the user zoom in they get to reveal each marker and thus be able to view the information on that marker.
+
+```javascript
+        // Create an array of alphabetical characters used to label the markers.
+        
+        var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+        // Add some markers to the map.
+        // Note: The code uses the JavaScript Array.prototype.map() method to
+        // create an array of markers based on a given "locations" array.
+        // The map() method here has nothing to do with the Google Maps API.
+        
+        var markers = locations.map(function(location, i) {
+          return new google.maps.Marker({
+            animation: google.maps.Animation.DROP,
+            position: location,
+            label: labels[i % labels.length]
+          });
+        });
+        
+
+        // Add a marker clusterer to manage the markers.
+        var markerCluster = new MarkerClusterer(map, markers,
+            {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+
+```
 
 ## Issues
+
+* Need to figure out to use the cluster tool on the newly identified `google search places`
 * Broken side-menu on the web-app page. Working to fix this ASAP **[FIXED]**
 
 ## Milestone/Backlog
