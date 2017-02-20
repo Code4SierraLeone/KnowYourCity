@@ -16,15 +16,18 @@ For the User Interface Design and Logic Implementation, I have used the followin
 * `Firebase`(Authentication and Real-Time Database)
 
 ## Main Features
+
 * Allow users to find mapped resource centers in the Informal Settlement Areas
 * Allow users to have access to contacts to the mapped resource centers
 * Allow users to  Identify their current location on the map, thus be able to trace the mapped locations
 
 ## Quick Overview
+
 KnowYourCity Campaign App has four main sections. Each sections aims at offering unique and important role 
 in the whole system. As indicated below;
 
 #### Landing Page
+
 Just a simple descriptive landing page to help new users understand the aim of the web-app. 
 
 ![alt tag](https://raw.githubusercontent.com/Code4SierraLeone/KnowYourCity/base/assets/img/photos/13.png)
@@ -32,36 +35,37 @@ Just a simple descriptive landing page to help new users understand the aim of t
 
 #### Web-App Main Page
 
-![alt tag](https://raw.githubusercontent.com/Code4SierraLeone/KnowYourCity/base/assets/img/photos/12.png)
-
 The home page design aims to showing the user all the mapped amenities in various locations with the Informal 
 Settlement Areas in Freetown. It also allows the users to know their current location and have access to Google 
 Directions to help them find the closest mapped amenity.
 
+![alt tag](https://raw.githubusercontent.com/Code4SierraLeone/KnowYourCity/base/assets/img/photos/12.png)
+
+
 #### Web-App Support-Center Page
-
-
-![alt tag](https://raw.githubusercontent.com/Code4SierraLeone/KnowYourCity/base/assets/img/photos/14.png)
 
 This page contains the direct contacts to all the amenities centers. With this tool users can easily reach out to
 these centers in any case of emergency, and hopefully get quick medic assistance or quick access to these centers 
 by ambulances support.
 
-#### Web-App Report-Hazard Page
+![alt tag](https://raw.githubusercontent.com/Code4SierraLeone/KnowYourCity/base/assets/img/photos/14.png)
 
-![alt tag](https://raw.githubusercontent.com/Code4SierraLeone/KnowYourCity/base/assets/img/photos/15.png)
+#### Web-App Report-Hazard Page
 
 We believe that Hazard occurrence can be natural and new ones can happen anytime. Thus we are giving the users the power
 to report new hazards in their areas, thus help us easily reach out to the emergency cases in time.
 
-#### Web-App Help | FAQ Page
+![alt tag](https://raw.githubusercontent.com/Code4SierraLeone/KnowYourCity/base/assets/img/photos/15.png)
 
-![alt tag](https://raw.githubusercontent.com/Code4SierraLeone/KnowYourCity/base/assets/img/photos/16.png)
+#### Web-App Help | FAQ Page
 
 This page offers answers to the Frequently Asked Questions about the KnowYourCity Campaign App as well as it highlights the main objectives
 and serves as a quick help page.
 
+![alt tag](https://raw.githubusercontent.com/Code4SierraLeone/KnowYourCity/base/assets/img/photos/16.png)
+
 ## Developers
+
 * Ensure to visit the `3_init_logi branch` to check details on handling the logic and Admin system. This is entirely built on `golang` base.
 * To view the current user interface designs just serve the files from the `root` on your local server. You can as well set up the `$GOPATH` and run the `main.go` server found on this [3_init_logi branch](https://github.com/Code4SierraLeone/KnowYourCity/tree/3_init_logic).
 
@@ -81,6 +85,7 @@ and serves as a quick help page.
     * `$ go run app/main.go ` (This is for server deployment stage)
 
 >#### Data Mapping
+
 * Collection and Implementation of data mapping.
 * Included in the package is the Google Places API which I am using to search for all the hospitals within a radius of 11000, 
 this shows and maps any health center within that radius. Which is an amazing way of identifying amenities around the user. Thank you Google Map Places.
@@ -149,6 +154,7 @@ this shows and maps any health center within that radius. Which is an amazing wa
 ```
 * When implementing the Google Places API its important to note that you need to include the `Google Map Places library`
 as below.
+
 ```html
 <script src="//maps.googleapis.com/maps/api/js?key=`YOUR-KEY`&libraries=places"></script>
 ```
@@ -190,6 +196,7 @@ KnowYourCity Campaign App is smart-phone friendly. This should come in handy for
 ![alt tag](https://raw.githubusercontent.com/Code4SierraLeone/KnowYourCity/base/assets/img/photos/11.png)
 
 >##### Setting up the UI Layout functionality
+
 Check the `app.js`
 
 ```javascript
@@ -237,11 +244,13 @@ Check the `app.js`
     };
 ```
 >##### Layout API
+
 ```javascript
     var uiLayoutApi = function($mode) {
         var $windowW = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 ```
 >##### Blocks Options Functionality
+
 * First am initializing default icons full-screen and content toggle buttons
 * Then calling blocks API on option button click
 ```javascript
@@ -253,10 +262,12 @@ Check the `app.js`
         });
     };
 ```
+
 ## Current Internal Issues
 
 * Need to figure out to use the cluster tool on the identified `google search places`
 * Broken side-menu on the web-app page. Working to fix this ASAP **[FIXED]** 
 
 ## Milestone/Backlog
+
 * Fully integrate the SMS feature into the app to allow for quick notifications
