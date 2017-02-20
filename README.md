@@ -54,6 +54,13 @@ by ambulances support.
 We believe that Hazard occurrence can be natural and new ones can happen anytime. Thus we are giving the users the power
 to report new hazards in their areas, thus help us easily reach out to the emergency cases in time.
 
+#### Web-App Help | FAQ Page
+
+![alt tag](https://raw.githubusercontent.com/Code4SierraLeone/KnowYourCity/base/assets/img/photos/16.png)
+
+This page offers answers to the Frequently Asked Questions about the KnowYourCity Campaign App as well as it highlights the main objectives
+and serves as a quick help page.
+
 ## Developers
 * Ensure to visit the `3_init_logi branch` to check details on handling the logic and Admin system. This is entirely built on `golang` base.
 * To view the current user interface designs just serve the files from the `root` on your local server. You can as well set up the `$GOPATH` and run the `main.go` server found on this [3_init_logi branch](https://github.com/Code4SierraLeone/KnowYourCity/tree/3_init_logic).
