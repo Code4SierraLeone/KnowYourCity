@@ -75,8 +75,8 @@ to report new hazards in their areas, thus help us easily reach out to the emerg
 
 >#### Data Mapping
 * Collection and Implementation of data mapping.
-* Included in the package is the Google Places Api which I am using to search for all the hospitals within a radius of 11000, 
-this shows and maps any health center within that radius. Which is an amazing way of identifying amenities around the user. Thank you Google Places.
+* Included in the package is the Google Places API which I am using to search for all the hospitals within a radius of 11000, 
+this shows and maps any health center within that radius. Which is an amazing way of identifying amenities around the user. Thank you Google Map Places.
 
 ```javascript
 	map = new google.maps.Map(document.getElementById('map'), {
