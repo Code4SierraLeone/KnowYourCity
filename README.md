@@ -1,7 +1,7 @@
 ## KnowYourCity Campaign [Code4SierraLeone]
 =============================================
 
-##### View the [Hosted Demo Site Here.](http://bit.ly/know-your-city)
+**View the [Hosted Demo Site Here.](http://bit.ly/know-your-city)**
 
 **This branch mainly contains the main logic of the app that handles the Administrative Management part and can be used to both map the data as well manipulate and manage the data.**
 
