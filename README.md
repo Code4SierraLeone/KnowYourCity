@@ -13,7 +13,7 @@ For the User Interface Design and Logic Implementation, I have used the followin
 * `Google Maps Javascript API v3`
 * `JavaScript`
 * `Golang` (Local server taste runs
-* `Firebase`(Authentication and Realtime Database)
+* `Firebase`(Authentication and Real-Time Database)
 
 ## Main Features
 * Allow users to find mapped resource centers in the Informal Settlement Areas
@@ -22,7 +22,7 @@ For the User Interface Design and Logic Implementation, I have used the followin
 
 ## Check it out at a glance
 KnowYourCity Campaign App has four main sections. Each sections aims at offering unique and important role 
-in the whole system. As indictated below;
+in the whole system. As indicated below;
 
 #### Home Page
 
@@ -39,18 +39,19 @@ Directions to help them find the closest mapped amenity.
 
 #### Web-App Support-Center Page
 
+
+![alt tag](https://raw.githubusercontent.com/Code4SierraLeone/KnowYourCity/base/assets/img/photos/14.png)
+
 This page contains the direct contacts to all the amenities centers. With this tool users can easily reach out to
 these centers in any case of emergency, and hopefully get quick medic assistance or quick access to these centers 
 by ambulances support.
 
-![alt tag](https://raw.githubusercontent.com/Code4SierraLeone/KnowYourCity/base/assets/img/photos/14.png)
-
 #### Web-App Report-Hazard Page
+
+![alt tag](https://raw.githubusercontent.com/Code4SierraLeone/KnowYourCity/base/assets/img/photos/15.png)
 
 We believe that Hazard occurrence can be natural and new ones can happen anytime. Thus we are giving the users the power
 to report new hazards in their areas, thus help us easily reach out to the emergency cases in time.
-
-![alt tag](https://raw.githubusercontent.com/Code4SierraLeone/KnowYourCity/base/assets/img/photos/15.png)
 
 ## Getting your own instance of Know Your City Campaign app
 
@@ -140,7 +141,7 @@ as below.
 <script src="//maps.googleapis.com/maps/api/js?key=`YOUR-KEY`&libraries=places"></script>
 ```
 
-## GEO-location & Google DIrections
+## GEO-Location & Google Directions
 
 The core aim of KnowYourCity Campaign is to give seamless solution to finding amenities. Mapping the amenities is enough but 
 giving the users the power to know where they are currently situated, will even make it better, as they will easily know which
