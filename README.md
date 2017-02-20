@@ -21,14 +21,36 @@ For the User Interface Design and Logic Implementation, I have used the followin
 * Allow users to  Identify their current location on the map, thus be able to trace the mapped locations
 
 ## Check it out at a glance
+KnowYourCity Campaign App has four main sections. Each sections aims at offering unique and important role 
+in the whole system. As indictated below;
 
 #### Home Page
 
 ![alt tag](https://raw.githubusercontent.com/Code4SierraLeone/KnowYourCity/base/assets/img/photos/13.png)
 
-#### Web-app Page
+
+#### Web-App Main Page
 
 ![alt tag](https://raw.githubusercontent.com/Code4SierraLeone/KnowYourCity/base/assets/img/photos/12.png)
+
+The home page design aims to showing the user all the mapped amenities in various locations with the Informal 
+Settlement Areas in Freetown. It also allows the users to know their current location and have access to Google 
+Directions to help them find the closest mapped amenity.
+
+#### Web-App Support-Center Page
+
+This page contains the direct contacts to all the amenities centers. With this tool users can easily reach out to
+these centers in any case of emergency, and hopefully get quick medic assistance or quick access to these centers 
+by ambulances support.
+
+![alt tag](https://raw.githubusercontent.com/Code4SierraLeone/KnowYourCity/base/assets/img/photos/14.png)
+
+#### Web-App Report-Hazard Page
+
+We believe that Hazard occurrence can be natural and new ones can happen anytime. Thus we are giving the users the power
+to report new hazards in their areas, thus help us easily reach out to the emergency cases in time.
+
+![alt tag](https://raw.githubusercontent.com/Code4SierraLeone/KnowYourCity/base/assets/img/photos/15.png)
 
 ## Getting your own instance of Know Your City Campaign app
 
@@ -47,7 +69,8 @@ For the User Interface Design and Logic Implementation, I have used the followin
 
 ## Data Mapping
 * Collection and Implementation of data mapping.
-* Included in the package is the Google Places Api which I am using to search for all the hospitals within a radius of 11000, this shows and maps any health center within that radius. Which is an amazing way of identifying amenities around the user. Thank you Google Places.
+* Included in the package is the Google Places Api which I am using to search for all the hospitals within a radius of 11000, 
+this shows and maps any health center within that radius. Which is an amazing way of identifying amenities around the user. Thank you Google Places.
 
 ```javascript
 	map = new google.maps.Map(document.getElementById('map'), {
@@ -149,7 +172,7 @@ direction to take to access the amenities. With this we can easily introduce Goo
 
 ## Issues
 
-* Need to figure out to use the cluster tool on the newly identified `google search places`
+* Need to figure out to use the cluster tool on the identified `google search places`
 * Broken side-menu on the web-app page. Working to fix this ASAP **[FIXED]**
 
 ## Milestone/Backlog
