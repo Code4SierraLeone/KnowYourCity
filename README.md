@@ -7,7 +7,7 @@
 Know Your City Campaign aims at mapping all the amenities within Informal Settlement areas in Freetown, Sierra Leone, so as to help the occupants get help in the case of a disaster in the regions. The mapping will give details in terms of directions and distance from their current locations as well as the services offered in those areas.
 
 
-For the User Interface Design and Logic Implementation, I have used the following resources(please refer to the documentation(`to come`) for further details on each)
+For the User Interface Design and Logic Implementation, I have used the following resources(please refer to the documentation for further details on each)
 * `jQuery`
 * `HTML` & `LessCSS`
 * `Google Maps Javascript API v3`
@@ -141,7 +141,7 @@ as below.
 <script src="//maps.googleapis.com/maps/api/js?key=`YOUR-KEY`&libraries=places"></script>
 ```
 
-## GEO-Location & Google Directions
+## GEO-Location & Google Map Directions
 
 The core aim of KnowYourCity Campaign is to give seamless solution to finding amenities. Mapping the amenities is enough but 
 giving the users the power to know where they are currently situated, will even make it better, as they will easily know which
@@ -171,21 +171,20 @@ direction to take to access the amenities. With this we can easily introduce Goo
         }
 ```
 
-## Issues
+## UI/UX Design
 
-* Need to figure out to use the cluster tool on the identified `google search places`
-* Broken side-menu on the web-app page. Working to fix this ASAP **[FIXED]**
-
-## Milestone/Backlog
-* Fully integrate the SMS feature into the app to allow for quick notifications
-
-
-* To view the current user interface designs just run the files on the `templates directory` on your local server. You can as well set up the `$GOPATH` and run the `main.go` server found here[This is under construction and will be documented by next week].
-* The data being rendered on the User interface at the moment are dummy data, and not real especially on the Map.
-
-## Did You Know...
-
-KnowYourCity Campaign App is smartphone friendly? This should come in handy for usage of the system from any platform
+KnowYourCity Campaign App is smart-phone friendly. This should come in handy for usage of the system from any platform
 
 ![alt tag](https://raw.githubusercontent.com/Code4SierraLeone/KnowYourCity/base/assets/img/photos/11.png)
 
+## Developers
+* Ensure to visit the `3_init_logi branch` to check details on handling the logic and Admin system. This is entirely built on `golang` base.
+* To view the current user interface designs just run the files on the `templates directory` on your local server. You can as well set up the `$GOPATH` and run the `main.go` server found on this [3_init_logi branch](https://github.com/Code4SierraLeone/KnowYourCity/tree/3_init_logic).
+
+## Current Internal Issues
+
+* Need to figure out to use the cluster tool on the identified `google search places`
+* Broken side-menu on the web-app page. Working to fix this ASAP **[FIXED]** 
+
+## Milestone/Backlog
+* Fully integrate the SMS feature into the app to allow for quick notifications
