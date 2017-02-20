@@ -20,11 +20,12 @@ For the User Interface Design and Logic Implementation, I have used the followin
 * Allow users to have access to contacts to the mapped resource centers
 * Allow users to  Identify their current location on the map, thus be able to trace the mapped locations
 
-## Check it out at a glance
+## Quick Overview
 KnowYourCity Campaign App has four main sections. Each sections aims at offering unique and important role 
 in the whole system. As indicated below;
 
-#### Home Page
+#### Landing Page
+Just a simple descriptive landing page to help new users understand the aim of the web-app. 
 
 ![alt tag](https://raw.githubusercontent.com/Code4SierraLeone/KnowYourCity/base/assets/img/photos/13.png)
 
@@ -53,7 +54,11 @@ by ambulances support.
 We believe that Hazard occurrence can be natural and new ones can happen anytime. Thus we are giving the users the power
 to report new hazards in their areas, thus help us easily reach out to the emergency cases in time.
 
-## Getting your own instance of Know Your City Campaign app
+## Developers
+* Ensure to visit the `3_init_logi branch` to check details on handling the logic and Admin system. This is entirely built on `golang` base.
+* To view the current user interface designs just serve the files from the `root` on your local server. You can as well set up the `$GOPATH` and run the `main.go` server found on this [3_init_logi branch](https://github.com/Code4SierraLeone/KnowYourCity/tree/3_init_logic).
+
+>#### Getting your development instance of Know Your City Campaign app
 
 1. Clone this repository
 
@@ -65,10 +70,10 @@ to report new hazards in their areas, thus help us easily reach out to the emerg
 
 3. Run a development server from the root folder.
 
-    `$ go run app/serve.go ` (This is for current tests)
-    `$ go run app/main.go ` (This is for production stage)
+    * `$ go run app/serve.go ` (This is for current tests)
+    * `$ go run app/main.go ` (This is for server deployment stage)
 
-## Data Mapping
+>#### Data Mapping
 * Collection and Implementation of data mapping.
 * Included in the package is the Google Places Api which I am using to search for all the hospitals within a radius of 11000, 
 this shows and maps any health center within that radius. Which is an amazing way of identifying amenities around the user. Thank you Google Places.
@@ -141,7 +146,7 @@ as below.
 <script src="//maps.googleapis.com/maps/api/js?key=`YOUR-KEY`&libraries=places"></script>
 ```
 
-## GEO-Location & Google Map Directions
+>#### GEO-Location & Google Map Directions
 
 The core aim of KnowYourCity Campaign is to give seamless solution to finding amenities. Mapping the amenities is enough but 
 giving the users the power to know where they are currently situated, will even make it better, as they will easily know which
@@ -177,10 +182,70 @@ KnowYourCity Campaign App is smart-phone friendly. This should come in handy for
 
 ![alt tag](https://raw.githubusercontent.com/Code4SierraLeone/KnowYourCity/base/assets/img/photos/11.png)
 
-## Developers
-* Ensure to visit the `3_init_logi branch` to check details on handling the logic and Admin system. This is entirely built on `golang` base.
-* To view the current user interface designs just run the files on the `templates directory` on your local server. You can as well set up the `$GOPATH` and run the `main.go` server found on this [3_init_logi branch](https://github.com/Code4SierraLeone/KnowYourCity/tree/3_init_logic).
+>##### Setting up the UI Layout functionality
+Check the `app.js`
 
+```javascript
+    // Layout functionality
+    var uiLayout = function() {
+        // Resizes #main-container min height (push footer to the bottom)
+        var $resizeTimeout;
+
+        if ($lMain.length) {
+            uiHandleMain();
+
+            jQuery(window).on('resize orientationchange', function(){
+                clearTimeout($resizeTimeout);
+
+                $resizeTimeout = setTimeout(function(){
+                    uiHandleMain();
+                }, 150);
+            });
+        }
+
+        // Init sidebar and side overlay custom scrolling
+        uiHandleScroll('init');
+
+        // Init transparent header functionality (solid on scroll - used in frontend)
+        if ($lPage.hasClass('header-navbar-fixed') && $lPage.hasClass('header-navbar-transparent')) {
+            jQuery(window).on('scroll', function(){
+                if (jQuery(this).scrollTop() > 20) {
+                    $lPage.addClass('header-navbar-scroll');
+                } else {
+                    $lPage.removeClass('header-navbar-scroll');
+                }
+            });
+        }
+
+        // Call layout API on button click
+        jQuery('[data-toggle="layout"]').on('click', function(){
+            var $btn = jQuery(this);
+
+            uiLayoutApi($btn.data('action'));
+
+            if ($lHtml.hasClass('no-focus')) {
+                $btn.blur();
+            }
+        });
+    };
+```
+>##### Layout API
+```javascript
+    var uiLayoutApi = function($mode) {
+        var $windowW = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+```
+>##### Blocks Options Functionality
+* First am initializing default icons full-screen and content toggle buttons
+* Then calling blocks API on option button click
+```javascript
+    var uiBlocks = function() {
+        uiBlocksApi(false, 'init');
+
+        jQuery('[data-toggle="block-option"]').on('click', function(){
+            uiBlocksApi(jQuery(this).closest('.block'), jQuery(this).data('action'));
+        });
+    };
+```
 ## Current Internal Issues
 
 * Need to figure out to use the cluster tool on the identified `google search places`
