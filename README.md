@@ -19,7 +19,7 @@ For the User Interface Design and Logic Implementation, I have used the followin
 ## Main Features
 
 * Allow users to find mapped resource centers in the Informal Settlement Areas
-* Allow users to have access to contacts to the mapped resource centers
+* Allow users to have access to contacts of the mapped resource centers
 * Allow users to  Identify their current location on the map, thus be able to trace the mapped locations
 
 ## Quick Overview
