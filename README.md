@@ -12,7 +12,7 @@ For the User Interface Design and Logic Implementation, I have used the followin
 * `HTML` & `LessCSS`
 * `Google Maps Javascript API v3`
 * `JavaScript`
-* `Golang` (Local server taste runs
+* `Golang`
 * `Firebase`(Authentication and Real-Time Database)
 
 ## Main Features
