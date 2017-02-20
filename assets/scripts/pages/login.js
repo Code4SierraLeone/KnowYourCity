@@ -3,6 +3,7 @@
  *  Author     : samson
  *  Description: Custom JS code used in Login Page
  */
+
 var BasePagesLogin = function() {
     // Init Login Form Validation, for more examples you can check out https://github.com/jzaefferer/jquery-validation
     var initValidationLogin = function(){
@@ -21,9 +22,9 @@ var BasePagesLogin = function() {
                 jQuery(e).closest('.help-block').remove();
             },
             rules: {
-                'login-email': {
+                'login-username': {
                     required: true,
-                    email : true
+                    minlength: 3
                 },
                 'login-password': {
                     required: true,
@@ -43,38 +44,12 @@ var BasePagesLogin = function() {
         });
     };
 
-    var initAuth = function (){
-        // Initialize Firebase
-        const config = {
-            apiKey: "AIzaSyAtD3STZ5ML82cHXf-ME3fqpfXdbeb65QA",
-            authDomain: "knowyourcity-91f64.firebaseapp.com",
-            databaseURL: "https://knowyourcity-91f64.firebaseio.com",
-            storageBucket: "knowyourcity-91f64.appspot.com",
-            messagingSenderId: "669843503412"
-        };
-        firebase.initializeApp(config);
-
-        const loginemail = document.getElementById('login-email');
-        const loginpassword = document.getElementById('login-password');
-
-        const email = loginemail.value;
-        const pass = loginpassword.value;
-        const auth = firebase.auth();
-
-        const promise = auth.signInWithEmailAndPassword(email, pass);
-        promise.catch(e = console.log(e.message));
-
-    };
-
     return {
         init: function () {
             // Init Login Form Validation
             initValidationLogin();
-            initAuth();
         }
     };
-
-
 }();
 
 // Initialize when page loads
