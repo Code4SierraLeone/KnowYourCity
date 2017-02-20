@@ -1,365 +1,223 @@
 <!DOCTYPE html>
-<!--[if IE 9]>         <html class="ie9 no-focus" lang="en"> <![endif]-->
-<!--[if gt IE 9]><!--> <html class="no-focus" lang="en"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
-        <title>Know Your City</title>
+  <title>Know Your City</title>
 
-        <meta name="description" content="KnowYourCity">
-        <meta name="author" content="code4Africa">
-        <meta name="robots" content="noindex, nofollow">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="../../assets/img/favicons/favicon.png">
 
-        <!-- Icons -->
-        <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
-        <link rel="shortcut icon" href="../../assets/img/favicons/favicon.png">
+  <!-- Main CSS file -->
+  <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" id="css-main" href="../../assets/css/kyc.min.css">
+    <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
+    <link rel="stylesheet" id="css-theme" href="../../assets/css/themes/city.min.css">
 
-        <link rel="icon" type="image/png" href="../../assets/img/favicons/favicon-16x16.png" sizes="16x16">
-        <link rel="icon" type="image/png" href="../../assets/img/favicons/favicon-32x32.png" sizes="32x32">
-        <link rel="icon" type="image/png" href="../../assets/img/favicons/favicon-96x96.png" sizes="96x96">
-        <link rel="icon" type="image/png" href="../../assets/img/favicons/favicon-160x160.png" sizes="160x160">
-        <link rel="icon" type="image/png" href="../../assets/img/favicons/favicon-192x192.png" sizes="192x192">
+  <!--[if lt IE 9]>
+  <script src="../../assets/scripts/pages/html5shiv.js"></script>
+  <script src="../../assets/scripts/pages/respond.min.js"></script>
+  <![endif]-->
 
-        <link rel="apple-touch-icon" sizes="57x57" href="../../assets/img/favicons/apple-touch-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="60x60" href="../../assets/img/favicons/apple-touch-icon-60x60.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="../../assets/img/favicons/apple-touch-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="../../assets/img/favicons/apple-touch-icon-76x76.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="../../assets/img/favicons/apple-touch-icon-114x114.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="../../assets/img/favicons/apple-touch-icon-120x120.png">
-        <link rel="apple-touch-icon" sizes="144x144" href="../../assets/img/favicons/apple-touch-icon-144x144.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="../../assets/img/favicons/apple-touch-icon-152x152.png">
-        <link rel="apple-touch-icon" sizes="180x180" href="../../assets/img/favicons/apple-touch-icon-180x180.png">
-        <!-- END Icons -->
+</head>
+<body>
 
-        <!-- Stylesheets -->
-        <!-- Web fonts -->
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,700%7COpen+Sans:300,400,400italic,600,700">
+<!-- HEADER -->
+<header>
 
-        <!-- Page JS Plugins CSS go here -->
+  <!-- HEADER OVERLAY -->
+  <div class="lj-overlay lj-overlay-color"></div>
+  <!-- /HEADER OVERLAY -->
 
-        <!-- Bootstrap and KnowYourCity CSS framework -->
-        <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
-        <link rel="stylesheet" id="css-main" href="../../assets/css/kyc.min.css">
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="#home" class="active"><i class="fa fa-home"></i><span>Home</span></a>
+    <a href="#features"><i class="fa fa-diamond"></i><span>Features</span></a>
+    <a href="#contact"><i class="fa fa-envelope"></i><span>Contact</span></a>
+  </nav>
+  <!-- /NAVIGATION -->
 
-        <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
-        <link rel="stylesheet" id="css-theme" href="../../assets/css/themes/smooth.min.css">
-        <!-- END Stylesheets -->
-    </head>
-    <body>
-        <!-- Page Container -->
-        <!--
-            Available Classes:
+  <div class="container">
 
-            'enable-cookies'             Remembers active color theme between pages (when set through color theme list)
+    <div class="row">
 
-            'sidebar-l'                  Left Sidebar and right Side Overlay
-            'sidebar-r'                  Right Sidebar and left Side Overlay
-            'sidebar-mini'               Mini hoverable Sidebar (> 991px)
-            'sidebar-o'                  Visible Sidebar by default (> 991px)
-            'sidebar-o-xs'               Visible Sidebar by default (< 992px)
+      <!-- SOCIALS -->
+      <div class="col-sm-6 col-sm-push-6 lj-socials">
+        <ul>
+          <li><a class="fa fa-github" href="https://github.com/Code4SierraLeone/KnowYourCity" target="_blank"></a></li>
+          <li><a class="fa fa-facebook" href="#!"></a></li>
+          <li><a class="fa fa-twitter" href="#!"></a></li>
+          <li><a class="fa fa-google-plus" href="#!"></a></li>
+        </ul>
+      </div>
+      <!-- /SOCIALS -->
 
-            'side-overlay-hover'         Hoverable Side Overlay (> 991px)
-            'side-overlay-o'             Visible Side Overlay by default (> 991px)
+      <!-- LOGO -->
+      <div class="col-sm-3 col-sm-pull-6 lj-title">
+        <a class="h1 text-white" href="index.html">
+          <span>Kn</span><i class="fa fa-circle-o-notch text-primary"></i><span class="h1 font-w600 sidebar-mini-hide">w Your City</span>
+        </a>
+      </div>
+      <!-- /LOGO -->
 
-            'side-scroll'                Enables custom scrolling on Sidebar and Side Overlay instead of native scrolling (> 991px)
+    </div>
 
-            'header-navbar-fixed'        Enables fixed header
-        -->
-        <div id="page-container" class="sidebar-l sidebar-o side-scroll header-navbar-fixed">
-            <!-- Side Overlay-->
-            <aside id="side-overlay">
-                <!-- Side Overlay Scroll Container -->
-                <div id="side-overlay-scroll">
-                    <!-- Side Header -->
-                    <div class="side-header side-content">
-                        <!-- Layout API, functionality initialized in App() -> uiLayoutApi() -->
-                        <button class="btn btn-default pull-right" type="button" data-toggle="layout" data-action="side_overlay_close">
-                            <i class="fa fa-times"></i>
-                        </button>
-                        <span class="font-w600 push-10-l">Admin</span>
-                    </div>
-                    <!-- END Side Header -->
+    <!-- CHANGER -->
+    <div class="lj-changer">
 
-                    <!-- Side Content -->
-                    <div class="side-content remove-padding-t">
-                        <!-- Block -->
-                        <div class="block pull-r-l">
-                            <div class="block-header bg-gray-lighter">
-                                <ul class="block-options">
-                                    <li>
-                                        <button type="button" data-toggle="block-option" data-action="refresh_toggle" data-action-mode="demo"><i class="si si-refresh"></i></button>
-                                    </li>
-                                    <li>
-                                        <button type="button" data-toggle="block-option" data-action="content_toggle"></button>
-                                    </li>
-                                </ul>
-                                <h3 class="block-title">Block</h3>
-                            </div>
-                            <div class="block-content">
-                                <p>...</p>
-                            </div>
-                        </div>
-                        <!-- END Block -->
-                    </div>
-                    <!-- END Side Content -->
-                </div>
-                <!-- END Side Overlay Scroll Container -->
-            </aside>
-            <!-- END Side Overlay -->
+      <!-- PAGE #HOME -->
+      <div id="home" class="active">
 
-            <!-- Sidebar -->
-            <nav id="sidebar">
-                <!-- Sidebar Scroll Container -->
-                <div id="sidebar-scroll">
-                    <!-- Sidebar Content -->
-                    <!-- Adding .sidebar-mini-hide to an element will hide it when the sidebar is in mini mode -->
-                    <div class="sidebar-content">
-                        <!-- Side Header -->
-                        <div class="side-header side-content bg-white-op">
-                            <!-- Layout API, functionality initialized in App() -> uiLayoutApi() -->
-                            <button class="btn btn-link text-gray pull-right hidden-md hidden-lg" type="button" data-toggle="layout" data-action="sidebar_close">
-                                <i class="fa fa-times"></i>
-                            </button>
-                            <!-- Themes functionality initialized in App() -> uiHandleTheme() -->
-                            <a class="h5 text-white" href="index.html">
-                                <span>Kn</span><i class="fa fa-circle-o-notch text-primary"></i><span class="h5 font-w600 sidebar-mini-hide">w Your City</span>
-                            </a>
-                        </div>
-                        <!-- END Side Header -->
-
-                        <!-- Side Content -->
-                        <div class="side-content">
-                            <ul class="nav-main">
-                                <li>
-                                    <a class="active" href="index.html"><i class="si si-map"></i><span class="sidebar-mini-hide">Home</span></a>
-                                </li>
-                                <li>
-                                    <a class="submenu" href="supportcenter.html"><i class="si si-support"></i><span class="sidebar-mini-hide">Support Center</span></a>
-                                </li>
-                                <li>
-                                    <a class="submenu" href="contact.html"><i class="si si-badge"></i><span class="sidebar-mini-hide">Report Hazard</span></a>
-                                </li>
-                                <li>
-                                    <a class="submenu" href="#"><i class="si si-rocket"></i><span class="sidebar-mini-hide">Help | FAQ</span></a>
-                                </li>
-                                <br>
-                                <li class="nav-main-heading"><span class="sidebar-mini-hide">Know Your Area</span></li>
-                                <li>
-                                    <a class="submenu" href="#"><i class="si si-anchor"></i><span class="sidebar-mini-hide">A</span></a>
-                                </li>
-                                <li>
-                                    <a class="submenu" href="#"><i class="si si-pointer"></i><span class="sidebar-mini-hide">B</span></a>
-                                </li>
-                                <li>
-                                    <a class="submenu" href="#"><i class="si si-compass"></i><span class="sidebar-mini-hide">C</span></a>
-                                </li>
-                                <li>
-                                    <a class="submenu" href="#"><i class="si si-directions"></i><span class="sidebar-mini-hide">D</span></a>
-                                </li>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                                <li class="nav-main-heading"><span class="sidebar-mini-hide">Terms &amp; Privacy</span></li>
-                                <li>
-                                    <a class="submenu" href="#" data-toggle="modal" data-target="#modal-privacy"><i class="si si-info"></i><span class="sidebar-mini-hide">Privacy Policy</span></a>
-                                </li>
-                                <li>
-                                    <a class="submenu" href="#" data-toggle="modal" data-target="#modal-terms"><i class="si si-docs"></i><span class="sidebar-mini-hide">Terms &amp; Conditions</span></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- END Side Content -->
-                    </div>
-                    <!-- Sidebar Content -->
-                </div>
-                <!-- END Sidebar Scroll Container -->
-            </nav>
-            <!-- END Sidebar -->
-
-            <!-- Header -->
-            <header id="header-navbar" class="content-mini content-mini-full">
-                <!-- Header Navigation Left -->
-                 <ul class="nav-header pull-left">
-                    <li class="hidden-md hidden-lg">
-                        <!-- Layout API, functionality initialized in App() -> uiLayoutApi() -->
-                        <button class="btn btn-default" data-toggle="layout" data-action="sidebar_toggle" type="button">
-                            <i class="fa fa-navicon"></i>
-                        </button>
-                    </li>
-                    <li class="hidden-xs hidden-sm">
-                        <!-- Layout API, functionality initialized in App() -> uiLayoutApi() -->
-                        <button class="btn btn-default" data-toggle="layout" data-action="sidebar_mini_toggle" type="button">
-                            <i class="fa fa-ellipsis-v"></i>
-                        </button>
-                    </li>
-                    <li class="visible-xs">
-                        <!-- Toggle class helper (for .js-header-search below), functionality initialized in App() -> uiToggleClass() -->
-                        <button class="btn btn-default" data-toggle="class-toggle" data-target=".js-header-search" data-class="header-search-xs-visible" type="button">
-                            <i class="fa fa-search"></i>
-                        </button>
-                    </li>
-                    <li class="js-header-search header-search">
-                        <form class="form-horizontal" action="start_backend.html" method="post">
-                            <div class="form-material form-material-primary input-group remove-margin-t remove-margin-b">
-                                <input class="form-control" type="text" id="base-material-text" name="base-material-text" placeholder="Search..">
-                                <span class="input-group-addon"><i class="si si-magnifier"></i></span>
-                            </div>
-                        </form>
-                    </li>
-                </ul>
-                <!-- END Header Navigation Left -->
-            </header>
-            <!-- END Header -->
-
-            <!-- Main Container -->
-            <main id="main-container">
-                <!-- Page Header -->
-                <div class="content bg-image overflow-hidden" style="background-image: url('../../assets/img/photos/photo21@2x.jpg');">
-                    <div class="push-50-t push-15">
-                        <h1 class="h2 text-white animated zoomIn"><span>Kn</span><i class="fa fa-circle-o-notch text-primary"></i><span class="h2 font-w600 sidebar-mini-hide">w Your City</span></h1>
-                        <h2 class="h5 text-white-op animated zoomIn">Find Mapped Infrastructure Facilities in Freetown</h2>
-                    </div>
-                </div>
-                <!-- END Page Header -->
-                <!-- Stats -->
-                <div class="content bg-white border-b">
-                    <div class="row items-push text-uppercase">
-                        <div class="col-xs-6 col-sm-2">
-                            <div class="font-w700 text-gray-darker animated fadeIn">Hospitals | Clinics</div>
-                            <a class="h2 font-w300 text-primary animated flipInX" href="#">0</a>
-                        </div>
-                        <div class="col-xs-6 col-sm-2">
-                            <div class="font-w700 text-gray-darker animated fadeIn">Water Points</div>
-                            <a class="h2 font-w300 text-primary animated flipInX" href="#">0</a>
-                        </div>
-                        <div class="col-xs-6 col-sm-2">
-                            <div class="font-w700 text-gray-darker animated fadeIn">Food Points</div>
-                            <a class="h2 font-w300 text-primary animated flipInX" href="#">0</a>
-                        </div>
-                        <div class="col-xs-6 col-sm-2">
-                            <div class="font-w700 text-gray-darker animated fadeIn">Support Centers</div>
-                            <a class="h2 font-w300 text-primary animated flipInX" href="#">0</a>
-                        </div>
-                        <div class="col-xs-6 col-sm-2">
-                            <div class="font-w700 text-gray-darker animated fadeIn">Shelters</div>
-                            <a class="h2 font-w300 text-primary animated flipInX" href="#">0</a>
-                        </div>
-                        <div class="col-xs-6 col-sm-2">
-                            <div class="font-w700 text-gray-darker animated fadeIn">Red Cross</div>
-                            <a class="h2 font-w300 text-primary animated flipInX" href="#">0</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- END Stats -->
-
-                <!-- Page 'Content' -->
-                <div class="main-container">
-                    <!-- Map Intergration -->
-                    <div class="block">
-                        <div id="map" style="height: 625px;"></div>
-                    </div>
-                    <!-- END Map Intergration -->
-                </div>
-                <!-- END Page Content -->
-            </main>
-            <!-- END Main Container -->
-
-            <!-- Footer -->
-            <footer id="page-footer" class="content-mini content-mini-full font-s12 bg-gray-lighter clearfix">
-                <div class="pull-right">
-                    Crafted with <i class="fa fa-heart text-city"></i> by <a class="font-w600" href="#" target="_blank">code4Africa</a>
-                </div>
-                <div class="pull-left">
-                    <a class="font-w600" href="#" target="_blank">#KnowYourCity</a> &copy; <span>2016-17</span>
-                </div>
-            </footer>
-            <!-- END Footer -->
+        <!-- TITLE -->
+        <div class="row">
+          <div class="col-xs-12 text-white lj-title">
+            <div>Find
+              <div class="rotate"><ul class="texts">
+                <li>health centers</li>
+                <li>food centers</li>
+                <li>shelters</li>
+                <li>redcross</li>
+                <li>support centers</li>
+              </ul></div></div>
+          </div>
         </div>
-        <!-- END Page Container -->
-        <!-- Terms Modal -->
-        <div class="modal fade" id="modal-terms" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-popin">
-                <div class="modal-content">
-                    <div class="block block-themed block-transparent remove-margin-b">
-                        <div class="block-header bg-primary-dark">
-                            <ul class="block-options">
-                                <li>
-                                    <button data-dismiss="modal" type="button"><i class="si si-close"></i></button>
-                                </li>
-                            </ul>
-                            <h3 class="block-title">Terms &amp; Conditions</h3>
-                        </div>
-                        <div class="block-content">
-                            <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
-                            <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
-                            <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
-                            <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
-                            <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-sm btn-primary" type="button" data-dismiss="modal"><i class="fa fa-check"></i> Agree | Close</button>
-                    </div>
-                </div>
-            </div>
+        <!-- /TITLE -->
+
+        <!-- TEXT PARAGRAPH -->
+        <div class="row">
+          <div class="col-xs-12 text-white lj-title-paragraph">
+              <p>An open source web-based platform which aims to map the infrastructure facilities present in the informal settlements in Freetown!</p>
+          </div>
         </div>
-        <!-- END Terms Modal -->
 
-        <!-- Privacy Modal -->
-        <div class="modal fade" id="modal-privacy" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-popin">
-                <div class="modal-content">
-                    <div class="block block-themed block-transparent remove-margin-b">
-                        <div class="block-header bg-primary-dark">
-                            <ul class="block-options">
-                                <li>
-                                    <button data-dismiss="modal" type="button"><i class="si si-close"></i></button>
-                                </li>
-                            </ul>
-                            <h3 class="block-title">Privacy Policy</h3>
-                        </div>
-                        <div class="block-content">
-                            <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
-                            <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
-                            <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
-                            <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
-                            <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-sm btn-primary" type="button" data-dismiss="modal"><i class="fa fa-check"></i> Agree | Close</button>
-                    </div>
-                </div>
-            </div>
+        <div class="text-white">
+          <h2><a href="home.html">Discover</a></h2>
         </div>
-        <!-- END Privacy Modal -->
 
 
-        <!-- KnowYourCity Core JS: jQuery, Bootstrap, slimScroll, scrollLock, Appear, CountTo, Placeholder, Cookie and App.js -->
-        <script src="../../assets/scripts/core/jquery.min.js"></script>
-        <script src="../../assets/scripts/core/bootstrap.min.js"></script>
-        <script src="../../assets/scripts/core/jquery.slimscroll.min.js"></script>
-        <script src="../../assets/scripts/core/jquery.scrollLock.min.js"></script>
-        <script src="../../assets/scripts/core/jquery.appear.min.js"></script>
-        <script src="../../assets/scripts/core/jquery.countTo.min.js"></script>
-        <script src="../../assets/scripts/core/jquery.placeholder.min.js"></script>
-        <script src="../../assets/scripts/core/js.cookie.min.js"></script>
-        <script src="../../assets/scripts/app.js"></script>
+        <!-- /TEXT PARAGRAPH -->
 
-        <!-- Page JS Plugins -->
-        <!-- Google Maps API Key (you will have to obtain a Google Maps API key to use Google Maps) -->
-        <!-- For more info please have a look at https://developers.google.com/maps/documentation/javascript/get-api-key#key -->
-        <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyCmR3KfVdA9vuA-HYpMAXVPL5mYjiFEMII"></script>
-        <script src="../../assets/scripts/plugins/gmapsjs/gmaps.min.js"></script>
+      </div>
+      <!-- /PAGE #HOME -->
 
-        <!-- KnowYourCity Core JS: jQuery, Bootstrap, slimScroll, scrollLock, Appear, CountTo, Placeholder, Cookie and App.js -->
-        <script src="../../assets/scripts/kyc.min.js"></script>
-        <script src="../../assets/scripts/pages/index_maps.js"></script>
+      <!-- PAGE #FEATURES -->
+      <div id="features" class="text-white subpage">
+        <div class="row">
+          <div class="col-sm-6">
 
-        <!-- Page JS Plugins + Page JS Code -->
-    </body>
+            <!-- TITLE -->
+            <h3>Features</h3>
+            <!-- /TITLE -->
+
+            <!-- TEXT PARAGRAPH -->
+              <p>KnowYourCity Campaign aims at mapping all the amenities within Informal Settlement areas in Freetown, Sierra Leone.</p>
+            <!-- TEXT PARAGRAPH -->
+
+            <!-- FEATURES LIST -->
+            <ul>
+              <li>
+                <span>Mapped Amenities</span>
+                  <p>Allow users to find mapped resource centers in the Informal Settlement Areas!</p>
+              </li>
+              <li>
+                <span>Unique &amp Accurate</span>
+                  <p>Allow users to Identify their current location on the map, thus be able to trace the mapped locations.</p>
+              </li>
+              <li>
+                <span>Fast &amp Reliable</span>
+                  <p>Perfection in every aspect. We've spend extra time making sure every part of KnowYourCity App work and look as expected.</p>
+              </li>
+            </ul>
+            <!-- /FEATURES LIST -->
+
+          </div>
+        </div>
+      </div>
+      <!-- /PAGE #FEATURES -->
+
+      <!-- PAGE #CONTACT -->
+      <div id="contact" class="text-white subpage">
+        <div class="row">
+          <div class="col-sm-8 col-md-6">
+
+            <!-- TITLE -->
+            <h3>Contact</h3>
+            <!-- /TITLE -->
+              <br>
+              <br>
+
+            <!-- TEXT PARAGRAPH -->
+              <p>Don’t hesitate to ask, we are here to help you!</p>
+            <!-- /TEXT PARAGRAPH -->
+
+            <!-- CONTACT FORM -->
+            <form autocomplete="off">
+              <label for="contact-name">Name<span class="verification"></span></label>
+              <input type="text" value="" name="contact-name" id="contact-name">
+              <label for="contact-email">Email<span class="verification"></span></label>
+              <input type="text" value="" name="contact-email" id="contact-email">
+              <label for="contact-message">Message<span class="verification"></span></label>
+              <textarea name="contact-message" id="contact-message"></textarea>
+              <button type="submit" name="contact-submit">Submit</button>
+              <span class="contact-message">Submit successful, thanks!</span>
+            </form>
+            <!-- /CONTACT FORM -->
+
+          </div>
+        </div>
+      </div>
+      <!-- /PAGE #CONTACT -->
+
+    </div>
+    <!-- /CHANGER -->
+
+  </div>
+
+  <!-- BACKGROUND -->
+  <div class="lj-background"></div>
+  <!-- /BACKGROUND -->
+
+</header>
+<!-- /HEADER -->
+
+<!-- FOOTER -->
+<footer>
+
+  <div class="container">
+    <div class="row">
+
+      <!-- FOOTER COPYRIGHTS -->
+      <div class="text-white col-sm-12 lj-footer-copyrights">
+        <p>&copy; All rights reserved. <a href="https://github.com/Code4SierraLeone/KnowYourCity" target="_blank">KnowYourCity 2017</a></p>
+      </div>
+      <!-- /FOOTER COPYRIGHTS -->
+
+    </div>
+  </div>
+
+</footer>
+<!-- /FOOTER -->
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<!-- Backstretch -->
+<script src="../../assets/scripts/pages/jquery.backstretch.min.js"></script>
+<!-- Masonry -->
+<script src="../../assets/scripts/pages/masonry.min.js"></script>
+<!-- Magnific Popup -->
+<script src="../../assets/scripts/pages/jquery.magnific-popup.min.js"></script>
+<!-- jQuery Easings -->
+<script src="../../assets/scripts/pages/jquery.easing.1.3.js"></script>
+<!-- Retinadisplay -->
+<script src="../../assets/scripts/pages/retinadisplay.js"></script>
+<!-- Velocity js -->
+<script src="../../assets/scripts/pages/velocity.min.js"></script>
+<!-- Lettering -->
+<script src="../../assets/scripts/pages/jquery.lettering.js"></script>
+<!-- Textillate -->
+<script src="../../assets/scripts/pages/jquery.textillate.js"></script>
+<script src="../../assets/scripts/pages/lj-coffee-break.js"></script>
+</body>
 </html>
