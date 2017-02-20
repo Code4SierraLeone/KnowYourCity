@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<!--[if IE 9]>         <html class="ie9 no-focus" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-focus" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+
+    <title>Know Your City</title>
+
+    <meta name="description" content="KnowYourCity">
+    <meta name="author" content="code4Africa">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- Icons -->
+    <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
+    <link rel="shortcut icon" href="../../assets/img/favicons/favicon.png">
+
+    <link rel="icon" type="image/png" href="../../assets/img/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="../../assets/img/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="../../assets/img/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="../../assets/img/favicons/favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="../../assets/img/favicons/favicon-192x192.png" sizes="192x192">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="../../assets/img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../../assets/img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../../assets/img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../../assets/img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../../assets/img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../../assets/img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../../assets/img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../../assets/img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../assets/img/favicons/apple-touch-icon-180x180.png">
+    <!-- END Icons -->
+
+    <!-- Stylesheets -->
+    <!-- Web fonts -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,700%7COpen+Sans:300,400,400italic,600,700">
+
+    <!-- Page JS Plugins CSS go here -->
+
+    <!-- Bootstrap and KnowYourCity CSS framework -->
+    <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" id="css-main" href="../../assets/css/kyc.min.css">
+
+    <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
+    <link rel="stylesheet" id="css-theme" href="../../assets/css/themes/city.min.css">
+    <!-- END Stylesheets -->
+</head>
+<body>
+<!--<div id="page-loader"></div>-->
+<!-- Page Container -->
+<!--
+    Available Classes:
+
+    'enable-cookies'             Remembers active color theme between pages (when set through color theme list)
+
+    'sidebar-l'                  Left Sidebar and right Side Overlay
+    'sidebar-r'                  Right Sidebar and left Side Overlay
+    'sidebar-mini'               Mini hoverable Sidebar (> 991px)
+    'sidebar-o'                  Visible Sidebar by default (> 991px)
+    'sidebar-o-xs'               Visible Sidebar by default (< 992px)
+
+    'side-overlay-hover'         Hoverable Side Overlay (> 991px)
+    'side-overlay-o'             Visible Side Overlay by default (> 991px)
+
+    'side-scroll'                Enables custom scrolling on Sidebar and Side Overlay instead of native scrolling (> 991px)
+
+    'header-navbar-fixed'        Enables fixed header
+-->
+<div id="page-container" class="sidebar-l sidebar-o side-scroll header-navbar-fixed">
+    <!-- Sidebar -->
+    <nav id="sidebar">
+        <!-- Sidebar Scroll Container -->
+        <div id="sidebar-scroll">
+            <!-- Sidebar Content -->
+            <!-- Adding .sidebar-mini-hide to an element will hide it when the sidebar is in mini mode -->
+            <div class="sidebar-content">
+                <!-- Side Header -->
+                <div class="side-header side-content bg-white-op">
+                    <!-- Layout API, functionality initialized in App() -> uiLayoutApi() -->
+                    <button class="btn btn-link text-gray pull-right hidden-md hidden-lg" type="button" data-toggle="layout" data-action="sidebar_close">
+                        <i class="fa fa-times"></i>
+                    </button>
+                    <!-- Themes functionality initialized in App() -> uiHandleTheme() -->
+                    <a class="h5 text-white" href="index.html">
+                        <span>Kn</span><i class="fa fa-circle-o-notch text-primary"></i><span class="h5 font-w600 sidebar-mini-hide">w Your City</span>
+                    </a>
+                    <span>Beta</span>
+                </div>
+                <!-- END Side Header -->
+
+                <!-- Side Content -->
+                <div class="side-content">
+                    <ul class="nav-main">
+                        <li>
+                            <a class="submenu" href="home.html"><i class="si si-map"></i><span class="sidebar-mini-hide">Home</span></a>
+                        </li>
+                        <li>
+                            <a class="submenu" href="supportcenter.html"><i class="si si-support"></i><span class="sidebar-mini-hide">Support Center</span></a>
+                        </li>
+                        <li>
+                            <a class="submenu" href="contact.html"><i class="si si-badge"></i><span class="sidebar-mini-hide">Report Hazard</span></a>
+                        </li>
+                        <li>
+                            <a class="active" href="faq.html"><i class="si si-rocket"></i><span class="sidebar-mini-hide">Help | FAQ</span></a>
+                        </li>
+                        <li class="nav-main-heading"><span class="sidebar-mini-hide">Know Your Area</span></li>
+                        <li>
+                            <a class="submenu" href="#"><i class="si si-anchor"></i><span class="sidebar-mini-hide">Kroo Bay</span></a>
+                        </li>
+                        <li>
+                            <a class="submenu" href="#"><i class="si si-pointer"></i><span class="sidebar-mini-hide">Susan's Bay</span></a>
+                        </li>
+                        <li>
+                            <a class="submenu" href="#"><i class="si si-compass"></i><span class="sidebar-mini-hide">Cline Town</span></a>
+                        </li>
+                        <li>
+                            <a class="submenu" href="#"><i class="si si-directions"></i><span class="sidebar-mini-hide">Congo Town</span></a>
+                        </li>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <li class="nav-main-heading"><span class="sidebar-mini-hide">Terms &amp; Privacy</span></li>
+                        <li>
+                            <a class="submenu" href="#" data-toggle="modal" data-target="#modal-privacy"><i class="si si-info"></i><span class="sidebar-mini-hide">Privacy Policy</span></a>
+                        </li>
+                        <li>
+                            <a class="submenu" href="#" data-toggle="modal" data-target="#modal-terms"><i class="si si-docs"></i><span class="sidebar-mini-hide">Terms &amp; Conditions</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- END Side Content -->
+            </div>
+            <!-- Sidebar Content -->
+        </div>
+        <!-- END Sidebar Scroll Container -->
+    </nav>
+    <!-- END Sidebar -->
+
+    <!-- Header -->
+    <header id="header-navbar" class="content-mini content-mini-full">
+        <!-- Header Navigation Left -->
+        <ul class="nav-header pull-left">
+            <li class="hidden-md hidden-lg">
+                <!-- Layout API, functionality initialized in App() -> uiLayoutApi() -->
+                <button class="btn btn-default" data-toggle="layout" data-action="sidebar_toggle" type="button">
+                    <i class="fa fa-navicon"></i>
+                </button>
+            </li>
+            <li class="hidden-xs hidden-sm">
+                <!-- Layout API, functionality initialized in App() -> uiLayoutApi() -->
+                <button class="btn btn-default" data-toggle="layout" data-action="sidebar_mini_toggle" type="button">
+                    <i class="fa fa-ellipsis-v"></i>
+                </button>
+            </li>
+            <li class="visible-xs">
+                <!-- Toggle class helper (for .js-header-search below), functionality initialized in App() -> uiToggleClass() -->
+                <button class="btn btn-default" data-toggle="class-toggle" data-target=".js-header-search" data-class="header-search-xs-visible" type="button">
+                    <i class="fa fa-search"></i>
+                </button>
+            </li>
+            <li class="js-header-search header-search">
+                <form class="form-horizontal" action="home.html" method="post">
+                    <div class="form-material form-material-primary input-group remove-margin-t remove-margin-b">
+                        <input class="form-control" type="text" id="base-material-text" name="base-material-text" placeholder="Search..">
+                        <span class="input-group-addon"><i class="si si-magnifier"></i></span>
+                    </div>
+                </form>
+            </li>
+        </ul>
+        <!-- END Header Navigation Left -->
+    </header>
+    <!-- END Header -->
+
+    <!-- Main Container -->
+    <!-- Main Container -->
+    <main id="main-container">
+        <!-- Page Header -->
+        <div class="content bg-gray-lighter">
+            <div class="row items-push">
+                <div class="col-sm-7">
+                    <h1 class="page-heading">
+                        FAQ <small>Check out answers to the most common questions.</small>
+                    </h1>
+                </div>
+            </div>
+        </div>
+        <!-- END Page Header -->
+
+        <!-- Page Content -->
+        <div class="content content-boxed">
+            <!-- Frequently Asked Questions -->
+            <div class="block">
+                <div class="block-content block-content-full block-content-narrow">
+                    <!-- Introduction -->
+                    <h2 class="h3 font-w600 push-30-t push">Introduction</h2>
+                    <div id="faq1" class="panel-group">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#faq1" href="#faq1_q1">Welcome to our service!</a>
+                                </h3>
+                            </div>
+                            <div id="faq1_q1" class="panel-collapse collapse in">
+                                <div class="panel-body">
+                                    <p>Potenti elit lectus augue eget iaculis vitae etiam, ullamcorper etiam bibendum ad feugiat magna accumsan dolor, nibh molestie cras hac ac ad massa, fusce ante convallis ante urna molestie vulputate bibendum tempus ante justo arcu erat accumsan adipiscing risus, libero condimentum venenatis sit nisl nisi ultricies sed, fames aliquet consectetur consequat nostra molestie neque nullam scelerisque neque commodo turpis quisque etiam egestas vulputate massa, curabitur tellus massa venenatis congue dolor enim integer luctus, nisi suscipit gravida fames quis vulputate nisi viverra luctus id leo dictum lorem, inceptos nibh orci.</p>
+                                    <p>Potenti elit lectus augue eget iaculis vitae etiam, ullamcorper etiam bibendum ad feugiat magna accumsan dolor, nibh molestie cras hac ac ad massa, fusce ante convallis ante urna molestie vulputate bibendum tempus ante justo arcu erat accumsan adipiscing risus, libero condimentum venenatis sit nisl nisi ultricies sed, fames aliquet consectetur consequat nostra molestie neque nullam scelerisque neque commodo turpis quisque etiam egestas vulputate massa, curabitur tellus massa venenatis congue dolor enim integer luctus, nisi suscipit gravida fames quis vulputate nisi viverra luctus id leo dictum lorem, inceptos nibh orci.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#faq1" href="#faq1_q2">Who are we?</a>
+                                </h3>
+                            </div>
+                            <div id="faq1_q2" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <p>Potenti elit lectus augue eget iaculis vitae etiam, ullamcorper etiam bibendum ad feugiat magna accumsan dolor, nibh molestie cras hac ac ad massa, fusce ante convallis ante urna molestie vulputate bibendum tempus ante justo arcu erat accumsan adipiscing risus, libero condimentum venenatis sit nisl nisi ultricies sed, fames aliquet consectetur consequat nostra molestie neque nullam scelerisque neque commodo turpis quisque etiam egestas vulputate massa, curabitur tellus massa venenatis congue dolor enim integer luctus, nisi suscipit gravida fames quis vulputate nisi viverra luctus id leo dictum lorem, inceptos nibh orci.</p>
+                                    <p>Potenti elit lectus augue eget iaculis vitae etiam, ullamcorper etiam bibendum ad feugiat magna accumsan dolor, nibh molestie cras hac ac ad massa, fusce ante convallis ante urna molestie vulputate bibendum tempus ante justo arcu erat accumsan adipiscing risus, libero condimentum venenatis sit nisl nisi ultricies sed, fames aliquet consectetur consequat nostra molestie neque nullam scelerisque neque commodo turpis quisque etiam egestas vulputate massa, curabitur tellus massa venenatis congue dolor enim integer luctus, nisi suscipit gravida fames quis vulputate nisi viverra luctus id leo dictum lorem, inceptos nibh orci.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#faq1" href="#faq1_q3">What are our values?</a>
+                                </h3>
+                            </div>
+                            <div id="faq1_q3" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <p>Potenti elit lectus augue eget iaculis vitae etiam, ullamcorper etiam bibendum ad feugiat magna accumsan dolor, nibh molestie cras hac ac ad massa, fusce ante convallis ante urna molestie vulputate bibendum tempus ante justo arcu erat accumsan adipiscing risus, libero condimentum venenatis sit nisl nisi ultricies sed, fames aliquet consectetur consequat nostra molestie neque nullam scelerisque neque commodo turpis quisque etiam egestas vulputate massa, curabitur tellus massa venenatis congue dolor enim integer luctus, nisi suscipit gravida fames quis vulputate nisi viverra luctus id leo dictum lorem, inceptos nibh orci.</p>
+                                    <p>Potenti elit lectus augue eget iaculis vitae etiam, ullamcorper etiam bibendum ad feugiat magna accumsan dolor, nibh molestie cras hac ac ad massa, fusce ante convallis ante urna molestie vulputate bibendum tempus ante justo arcu erat accumsan adipiscing risus, libero condimentum venenatis sit nisl nisi ultricies sed, fames aliquet consectetur consequat nostra molestie neque nullam scelerisque neque commodo turpis quisque etiam egestas vulputate massa, curabitur tellus massa venenatis congue dolor enim integer luctus, nisi suscipit gravida fames quis vulputate nisi viverra luctus id leo dictum lorem, inceptos nibh orci.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END Introduction -->
+
+                    <!-- Functionality -->
+                    <h2 class="h3 font-w600 push-50-t push">Functionality</h2>
+                    <div id="faq2" class="panel-group">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#faq2" href="#faq2_q1">What are the key features?</a>
+                                </h3>
+                            </div>
+                            <div id="faq2_q1" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <p>Potenti elit lectus augue eget iaculis vitae etiam, ullamcorper etiam bibendum ad feugiat magna accumsan dolor, nibh molestie cras hac ac ad massa, fusce ante convallis ante urna molestie vulputate bibendum tempus ante justo arcu erat accumsan adipiscing risus, libero condimentum venenatis sit nisl nisi ultricies sed, fames aliquet consectetur consequat nostra molestie neque nullam scelerisque neque commodo turpis quisque etiam egestas vulputate massa, curabitur tellus massa venenatis congue dolor enim integer luctus, nisi suscipit gravida fames quis vulputate nisi viverra luctus id leo dictum lorem, inceptos nibh orci.</p>
+                                    <p>Potenti elit lectus augue eget iaculis vitae etiam, ullamcorper etiam bibendum ad feugiat magna accumsan dolor, nibh molestie cras hac ac ad massa, fusce ante convallis ante urna molestie vulputate bibendum tempus ante justo arcu erat accumsan adipiscing risus, libero condimentum venenatis sit nisl nisi ultricies sed, fames aliquet consectetur consequat nostra molestie neque nullam scelerisque neque commodo turpis quisque etiam egestas vulputate massa, curabitur tellus massa venenatis congue dolor enim integer luctus, nisi suscipit gravida fames quis vulputate nisi viverra luctus id leo dictum lorem, inceptos nibh orci.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#faq2" href="#faq2_q2">Does your App support mobile devices?</a>
+                                </h3>
+                            </div>
+                            <div id="faq2_q2" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <p>Potenti elit lectus augue eget iaculis vitae etiam, ullamcorper etiam bibendum ad feugiat magna accumsan dolor, nibh molestie cras hac ac ad massa, fusce ante convallis ante urna molestie vulputate bibendum tempus ante justo arcu erat accumsan adipiscing risus, libero condimentum venenatis sit nisl nisi ultricies sed, fames aliquet consectetur consequat nostra molestie neque nullam scelerisque neque commodo turpis quisque etiam egestas vulputate massa, curabitur tellus massa venenatis congue dolor enim integer luctus, nisi suscipit gravida fames quis vulputate nisi viverra luctus id leo dictum lorem, inceptos nibh orci.</p>
+                                    <p>Potenti elit lectus augue eget iaculis vitae etiam, ullamcorper etiam bibendum ad feugiat magna accumsan dolor, nibh molestie cras hac ac ad massa, fusce ante convallis ante urna molestie vulputate bibendum tempus ante justo arcu erat accumsan adipiscing risus, libero condimentum venenatis sit nisl nisi ultricies sed, fames aliquet consectetur consequat nostra molestie neque nullam scelerisque neque commodo turpis quisque etiam egestas vulputate massa, curabitur tellus massa venenatis congue dolor enim integer luctus, nisi suscipit gravida fames quis vulputate nisi viverra luctus id leo dictum lorem, inceptos nibh orci.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#faq2" href="#faq2_q3">Why should I choose your service?</a>
+                                </h3>
+                            </div>
+                            <div id="faq2_q3" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <p>Potenti elit lectus augue eget iaculis vitae etiam, ullamcorper etiam bibendum ad feugiat magna accumsan dolor, nibh molestie cras hac ac ad massa, fusce ante convallis ante urna molestie vulputate bibendum tempus ante justo arcu erat accumsan adipiscing risus, libero condimentum venenatis sit nisl nisi ultricies sed, fames aliquet consectetur consequat nostra molestie neque nullam scelerisque neque commodo turpis quisque etiam egestas vulputate massa, curabitur tellus massa venenatis congue dolor enim integer luctus, nisi suscipit gravida fames quis vulputate nisi viverra luctus id leo dictum lorem, inceptos nibh orci.</p>
+                                    <p>Potenti elit lectus augue eget iaculis vitae etiam, ullamcorper etiam bibendum ad feugiat magna accumsan dolor, nibh molestie cras hac ac ad massa, fusce ante convallis ante urna molestie vulputate bibendum tempus ante justo arcu erat accumsan adipiscing risus, libero condimentum venenatis sit nisl nisi ultricies sed, fames aliquet consectetur consequat nostra molestie neque nullam scelerisque neque commodo turpis quisque etiam egestas vulputate massa, curabitur tellus massa venenatis congue dolor enim integer luctus, nisi suscipit gravida fames quis vulputate nisi viverra luctus id leo dictum lorem, inceptos nibh orci.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#faq2" href="#faq2_q4">Is the data accurate &amp secure?</a>
+                                </h3>
+                            </div>
+                            <div id="faq2_q4" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <p>Potenti elit lectus augue eget iaculis vitae etiam, ullamcorper etiam bibendum ad feugiat magna accumsan dolor, nibh molestie cras hac ac ad massa, fusce ante convallis ante urna molestie vulputate bibendum tempus ante justo arcu erat accumsan adipiscing risus, libero condimentum venenatis sit nisl nisi ultricies sed, fames aliquet consectetur consequat nostra molestie neque nullam scelerisque neque commodo turpis quisque etiam egestas vulputate massa, curabitur tellus massa venenatis congue dolor enim integer luctus, nisi suscipit gravida fames quis vulputate nisi viverra luctus id leo dictum lorem, inceptos nibh orci.</p>
+                                    <p>Potenti elit lectus augue eget iaculis vitae etiam, ullamcorper etiam bibendum ad feugiat magna accumsan dolor, nibh molestie cras hac ac ad massa, fusce ante convallis ante urna molestie vulputate bibendum tempus ante justo arcu erat accumsan adipiscing risus, libero condimentum venenatis sit nisl nisi ultricies sed, fames aliquet consectetur consequat nostra molestie neque nullam scelerisque neque commodo turpis quisque etiam egestas vulputate massa, curabitur tellus massa venenatis congue dolor enim integer luctus, nisi suscipit gravida fames quis vulputate nisi viverra luctus id leo dictum lorem, inceptos nibh orci.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END Functionality -->
+                </div>
+            </div>
+            <!-- END Frequently Asked Questions -->
+        </div>
+        <!-- END Page Content -->
+    </main>
+    <!-- END Main Container -->
+
+    <!-- Footer -->
+    <footer id="page-footer" class="content-mini content-mini-full font-s12 bg-gray-lighter clearfix">
+        <div class="pull-right">
+            Crafted with <i class="fa fa-heart text-city"></i> by <a class="font-w600" href="#" target="_blank">code4Africa</a>
+        </div>
+        <div class="pull-left">
+            <a class="font-w600" href="#" target="_blank">#KnowYourCity</a> &copy; <span>2016-17</span>
+        </div>
+    </footer>
+    <!-- END Footer -->
+</div>
+<!-- END Page Container -->
+
+<!-- Terms Modal -->
+<div class="modal fade" id="modal-terms" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-popout">
+        <div class="modal-content">
+            <div class="block block-themed block-transparent remove-margin-b">
+                <div class="block-header bg-primary-dark">
+                    <ul class="block-options">
+                        <li>
+                            <button data-dismiss="modal" type="button"><i class="si si-close"></i></button>
+                        </li>
+                    </ul>
+                    <h3 class="block-title">Terms &amp; Conditions</h3>
+                </div>
+                <div class="block-content">
+                    <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
+                    <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
+                    <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
+                    <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
+                    <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-sm btn-primary" type="button" data-dismiss="modal"><i class="fa fa-check"></i> Agree | Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END Terms Modal -->
+
+<!-- Privacy Modal -->
+<div class="modal fade" id="modal-privacy" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-popout">
+        <div class="modal-content">
+            <div class="block block-themed block-transparent remove-margin-b">
+                <div class="block-header bg-primary-dark">
+                    <ul class="block-options">
+                        <li>
+                            <button data-dismiss="modal" type="button"><i class="si si-close"></i></button>
+                        </li>
+                    </ul>
+                    <h3 class="block-title">Privacy Policy</h3>
+                </div>
+                <div class="block-content">
+                    <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
+                    <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
+                    <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
+                    <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
+                    <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-sm btn-primary" type="button" data-dismiss="modal"><i class="fa fa-check"></i> Agree | Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END Privacy Modal -->
+
+<!-- KnowYourCity Core JS: jQuery, Bootstrap, slimScroll, scrollLock, Appear, CountTo, Placeholder, Cookie and App.js -->
+<script src="../../assets/scripts/kyc.min.js"></script>
+
+<!-- Page JS Plugins + Page JS Code -->
+</body>
+</html>
