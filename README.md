@@ -111,6 +111,41 @@ For the User Interface Design and Logic Implementation, I have used the followin
             {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
 
 ```
+* When implementing the Google Places API its important to note that you need to include the `Google Map Places library`
+as below.
+```html
+<script src="//maps.googleapis.com/maps/api/js?key=`YOUR-KEY`&libraries=places"></script>
+```
+
+## GEO-location & Google DIrections
+
+The core aim of KnowYourCity Campaign is to give seamless solution to finding amenities. Mapping the amenities is enough but 
+giving the users the power to know where they are currently situated, will even make it better, as they will easily know which
+direction to take to access the amenities. With this we can easily introduce Google Directions which is the perfect solution.
+
+```javascript
+        // This will be useful for the users who are in the Freetown Informal Settlement Areas and will
+        // help them geolocate the mapped amenities inform of GeoJSON!
+        var infoWindow = new google.maps.InfoWindow({map: map});
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                var pos = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
+
+                infoWindow.setPosition(pos);
+                infoWindow.setContent('<h5>You are Here, look around for location of the nearest Mapped Facility.</h5>');
+                map.setCenter(pos);
+            }, function() {
+                handleLocationError(true, infoWindow, map.getCenter());
+            });
+        } else {
+            // Browser doesn't support Geolocation
+            handleLocationError(false, infoWindow, map.getCenter());
+        }
+```
 
 ## Issues
 
@@ -126,7 +161,7 @@ For the User Interface Design and Logic Implementation, I have used the followin
 
 ## Did You Know...
 
-#### That KnowYourCity Campaign App is smartphone friendly? Find out here..
+KnowYourCity Campaign App is smartphone friendly? This should come in handy for usage of the system from any platform
 
 ![alt tag](https://raw.githubusercontent.com/Code4SierraLeone/KnowYourCity/base/assets/img/photos/11.png)
 

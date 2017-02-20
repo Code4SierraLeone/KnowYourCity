@@ -354,17 +354,17 @@ var BaseCompMaps = function() {
         // but you can host it in a different subdomain. For example, you can make a request to files.example.com
         // from www.example.com.
 
-        // This will be useful for the users who are in the Freetown Informal Settlement Areas and will
-        // help them geolocate the mapped amenities inform of GeoJSON! I have disabled it as I am not within Freetown :)
+        // // This will be useful for the users who are in the Freetown Informal Settlement Areas and will
+        // // help them geolocate the mapped amenities inform of GeoJSON! I have disabled it as I am not within Freetown :)
         // var infoWindow = new google.maps.InfoWindow({map: map});
-
+        //
         // if (navigator.geolocation) {
         //     navigator.geolocation.getCurrentPosition(function(position) {
         //         var pos = {
         //             lat: position.coords.latitude,
         //             lng: position.coords.longitude
         //         };
-
+        //
         //         infoWindow.setPosition(pos);
         //         infoWindow.setContent('<h5>You are Here, look around for location of the nearest Mapped Facility.</h5>');
         //         map.setCenter(pos);
@@ -386,7 +386,7 @@ var BaseCompMaps = function() {
         service.nearbySearch({
           location: freetown,
           animation: google.maps.Animation.DROP,
-          radius: 11000,
+          radius: 10000,
           type: ['hospital']
         }, callback);
         
