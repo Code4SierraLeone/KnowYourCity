@@ -79,10 +79,6 @@ func main() {
 	}()
 	select {}
 
-	// Testing redirecting
-	// curl -v http://localhost:8080/products
-	// Or if you made forwarding or run as superuser so you have access to ports below 1024
-	// curl -v http://localhost/products
 }
 
 func index(w http.ResponseWriter, r *http.Request) {
