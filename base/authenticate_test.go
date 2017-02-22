@@ -43,15 +43,3 @@ func TestAuthAdmin(t *testing.T) {
 	}
 	selCode = auth.Code
 }
-
-func Test2F(t *testing.T) {
-	mSession, err := mgo.Dial("localhost")
-	if err != nil {
-		t.Fatal("Session Creation failed")
-	}
-	auth := new(Authentication)
-	auth.Setup(mSession)
-	if err := auth.Complete2F("2222", selCode); err != nil {
-		t.Fatal(err)
-	}
-}

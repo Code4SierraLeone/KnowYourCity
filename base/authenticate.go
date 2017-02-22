@@ -89,14 +89,6 @@ func (auth *Authentication) AuthenticateAdmin(email, pass string, client *rpc.Cl
 	return nil
 }
 
-// Complete2F completes the Second Factor authentication 
-func (auth *Authentication) Complete2F(uid string, code int) error {
-	if auth.dbCollection == nil {
-		return errors.New("Uninitialized Object Authentication")
-	}
-	return auth.dbCollection.Find(bson.M{"uid": uid, "code": code}).One(auth)
-}
-
 // AuthenticateSysUser authenticates the user and on success creates a new session
 func (auth *Authentication) AuthenticateSysUser(email, pass string) error {
 	// add session
