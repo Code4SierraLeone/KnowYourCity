@@ -16,83 +16,6 @@ import (
 	"gopkg.in/mgo.v2/bson"
 )
 
-func isValidSecret(dbSession *mgo.Session, secret string) bool {
-	keys := new(base.Keys)
-	keys.Setup(dbSession)
-	k, err := keys.Get()
-	if err != nil || len(k) < 1 {
-		keys.ID = bson.NewObjectId()
-		keys.Code = "kyc-secret-access-code" // Will probably need to autogenerate this value
-		keys.Setup(dbSession)
-		if err := keys.Create(); err != nil {
-			LogError(err)
-			return false
-		}
-		keys.Setup(dbSession)
-		k, err = keys.Get()
-		if err != nil {
-			LogError(err)
-			return false
-		}
-	}
-	return secret == k[0].Code
-}
-
-// SecretCode checks for the validity of the secret code entered by admin user
-func SecretCode(next http.HandlerFunc) http.HandlerFunc {
-	return func(rw http.ResponseWriter, r *http.Request) {
-		db := GetVar(r, "db").(*mgo.Session)
-		cc := r.FormValue("companyCode")
-		if !isValidSecret(db, cc) {
-			base.RespondError(rw, r, "Invalid Access Code")
-			return
-		}
-		next(rw, r)
-	}
-}
-
-// GetSecretCode queries the db for the secret code
-func GetSecretCode(rw http.ResponseWriter, r *http.Request) {
-	dbSession := GetVar(r, "db").(*mgo.Session)
-	defer RemoveVars(r)
-
-	keys := new(base.Keys)
-	keys.Setup(dbSession)
-	ks, err := keys.Get()
-	if err != nil {
-		LogError(err)
-		base.RespondError(rw, r, "Server Error")
-		return
-	}
-	base.RespondSuccess(rw, r, ks[0])
-}
-
-// SetSecretCode allows the admin user to set a new secret code
-func SetSecretCode(rw http.ResponseWriter, r *http.Request) {
-	dbSession := GetVar(r, "db").(*mgo.Session)
-	defer RemoveVars(r)
-
-	prev := r.FormValue("prev")
-	code := r.FormValue("code")
-
-	keys := new(base.Keys)
-	keys.Setup(dbSession)
-	ks, err := keys.Get()
-	if err != nil {
-		LogError(err)
-		base.RespondError(rw, r, "Server Error")
-		return
-	}
-	ks[0].Setup(dbSession)
-	ks[0].Code = code
-	if err := ks[0].Update(prev); err != nil {
-		LogError(err)
-		base.RespondError(rw, r, "Server Error")
-		return
-	}
-	base.RespondSuccess(rw, r, "Success")
-}
-
 // Register handles the registration of a new admin user account
 func Register(rw http.ResponseWriter, r *http.Request) {
 	// Get request variables
@@ -171,42 +94,6 @@ func Login(rw http.ResponseWriter, r *http.Request) {
 	}
 	feedchan <- Payload{"e", time.Now().String() + "::" + auth.Email + " logged in to the Admin panel"}
 	base.RespondSuccess(rw, r, auth.UID)
-}
-
-// L2Factor ensures double security to ensure that authentic users use the admin priviledges
-func L2Factor(rw http.ResponseWriter, r *http.Request) {
-	dbSession := GetVar(r, "db").(*mgo.Session)
-	client := GetVar(r, "rpc").(*rpc.Client)
-	defer RemoveVars(r)
-
-	uid := r.FormValue("uid")
-
-	code, convErr := strconv.Atoi(r.FormValue("code"))
-	if convErr != nil {
-		base.RespondError(rw, r, "Invalid Code format")
-		return
-	}
-	LogDebug(code)
-	auth := new(base.Authentication)
-	auth.Setup(dbSession)
-	if auth.Complete2F(uid, code) != nil {
-		base.RespondError(rw, r, "Invalid Code")
-		return
-	}
-	var stored bool
-	if err := client.Call("Sessions.Store", uid, &stored); err != nil {
-		ReportFatal(rw, r, err)
-		return
-	}
-	StoreSession(r.Header.Get("X-FORWARDED-FOR"), uid)
-	admin := new(base.Admin)
-	admin.Setup(dbSession)
-	if err := admin.Get("", uid); err != nil {
-		base.RespondError(rw, r, "Invalid UID")
-		return
-	}
-	LogInfo("Stored session information")
-	base.RespondSuccess(rw, r, admin)
 }
 
 

@@ -67,7 +67,7 @@ func main() {
 	// like this: http://serverfault.com/questions/67316/in-nginx-how-can-i-rewrite-all-http-requests-to-https-while-maintaining-sub-dom
 	// It will direct from http://localhost/users to https://localhost:9999/users, but not from http://localhost:9999/users
 	go func() {
-		log.Fatalf("ListenAndServe: %v", http.ListenAndServe(":8080", http.HandlerFunc(notlsHandler)))
+		log.Fatalf("ListenAndServe: %v", http.ListenAndServe(":9004", http.HandlerFunc(notlsHandler)))
 	}()
 	go func() {
 		fmt.Println("https://localhost"+*addr)
