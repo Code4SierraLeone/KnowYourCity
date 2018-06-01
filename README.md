@@ -1,7 +1,7 @@
 ## KnowYourCity Campaign [Code4SierraLeone]
 =============================================
 
-**View the [Hosted Demo Site Here.](http://bit.ly/know-your-city)**
+### ** Please note that this code base is now archived and this project built is now [continued/supported here](https://github.com/Code4SierraLeone/shdms)**
 
 **This branch mainly contains the main logic of the app that handles the Administrative Management part and can be used to both map the data as well manipulate and manage the data.**
 
